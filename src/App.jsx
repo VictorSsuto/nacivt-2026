@@ -73,6 +73,9 @@ function Header({ isLoaded }) {
           <a className="hover:text-[#c8102e] transition-colors" href="#">
             About
           </a>
+            <a className="hover:text-[#c8102e] transition-colors" href="#">
+            Rules
+          </a>
         </nav>
       </div>
     </header>
