@@ -1,21 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:wght@400;700;900&family=Noto+Serif+SC:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #111111;
+  /* Chinese Traditional Colors */
+  --color-chinese-red: #c8102e;
+  --color-chinese-gold: #d4af37;
+  --color-chinese-crimson: #8b0000;
+  
+  /* Montreal Colors */
+  --color-montreal-blue: #1e3a8a;
+  --color-montreal-navy: #0f172a;
+  
+  /* Neutrals */
+  --color-ink: #1a1a1a;
   --color-paper: #ffffff;
-  --color-brick: #7a1e22;
+  --color-cream: #faf8f3;
   --color-muted: #666666;
   --color-rule: #d9d9d9;
-  --color-overlay: #3d6d98;
   
-  --font-family-serif: Cardo, Georgia, serif;
-  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-family-serif: 'Crimson Text', 'Times New Roman', Times, serif;
+  --font-family-display: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  --font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-chinese: 'Noto Serif SC', serif;
 }
 
 body {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-serif);
   color: var(--color-ink);
   background-color: var(--color-paper);
+  font-size: 17px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+/* Initially hidden, will be revealed by animation */
+.fade-in-on-load {
+  opacity: 0;
+}
+
+.fade-in-up-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in-down-on-load {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Traditional decorative elements */
+.chinese-pattern {
+  background-image: 
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(200, 16, 46, 0.02) 2px, rgba(200, 16, 46, 0.02) 4px);
+}
+
+.traditional-border {
+  border: 2px solid var(--color-chinese-red);
+  border-top: 4px solid var(--color-chinese-red);
 }
