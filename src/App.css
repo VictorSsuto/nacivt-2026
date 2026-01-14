@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+  --color-brick: #7a1e22;
+  --color-muted: #666666;
+  --color-rule: #d9d9d9;
+  --color-overlay: #3d6d98;
+  
+  --font-family-serif: Cardo, Georgia, serif;
+  --font-family-sans: Inter, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+}
