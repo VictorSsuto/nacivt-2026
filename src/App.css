@@ -65,7 +65,7 @@ body {
     transform: translateY(0);
   }
 }
-
+/*animation*/
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -78,7 +78,7 @@ body {
   animation: fadeInDown 0.6s ease-out forwards;
 }
 
-/* Initially hidden, will be revealed by animation */
+
 .fade-in-on-load {
   opacity: 0;
 }
@@ -93,7 +93,6 @@ body {
   transform: translateY(-20px);
 }
 
-/* Traditional decorative elements */
 .chinese-pattern {
   background-image: 
     repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(200, 16, 46, 0.02) 2px, rgba(200, 16, 46, 0.02) 4px);
