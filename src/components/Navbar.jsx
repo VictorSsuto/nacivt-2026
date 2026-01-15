@@ -25,14 +25,16 @@ export default function Navbar({ isLoaded }) {
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.festival}>
             Night Market
           </Link>
+           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.rules}>
+            Rules
+          </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
             About
           </Link>
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.rules}>
-            Rules
-          </Link>
+       
         </nav>
       </div>
     </header>
   )
 }
+  
