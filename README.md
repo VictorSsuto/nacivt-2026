@@ -55,10 +55,3 @@ Notes:
 - `src/data/links.js` — single place to update named routes and contact
 - `src/App.jsx` — homepage layout and sections
 
-If you want, I can also export this README to PDF and attach it here — tell me if you want the PDF version.
-
----
-Generated on January 14, 2026
-### 2026 NACIVT 
-
-# read me being built 
