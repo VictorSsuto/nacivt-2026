@@ -7,12 +7,15 @@ export default function Navbar({ isLoaded }) {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div className={`flex items-center gap-3 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
           <div className="h-10 w-0.5 bg-[#c8102e]"></div>
-          <div className="font-bold tracking-wide text-[#c8102e] text-lg" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+          <Link to={LINKS.home} className="font-bold tracking-wide text-[#c8102e] text-lg" style={{ fontFamily: "'Libre Baskerville', serif" }}>
             Montreal <span className="text-[#1e3a8a]">NACIVT</span> 2026
-          </div>
+          </Link>
         </div>
 
         <nav className={`flex gap-8 text-xs font-medium uppercase tracking-widest text-black/70 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.home}>
+            Home
+          </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
             Register
           </Link>

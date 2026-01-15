@@ -22,10 +22,11 @@ export default function Footer({ isLoaded }) {
             </h4>
             <div className="h-px w-12 bg-black/20 mb-4"></div>
             <ul className="space-y-3 text-sm">
-              <li><Link to={LINKS.register} className="text-black/70 hover:text-[#c8102e] transition-colors">Registration</Link></li>
-              <li><Link to={LINKS.schedule} className="text-black/70 hover:text-[#c8102e] transition-colors">Schedule</Link></li>
-              <li><Link to={LINKS.rules} className="text-black/70 hover:text-[#c8102e] transition-colors">Rules</Link></li>
-              <li><Link to={LINKS.location} className="text-black/70 hover:text-[#c8102e] transition-colors">Location</Link></li>
+                <li><Link to={LINKS.home} className="text-black/70 hover:text-[#c8102e] transition-colors">Home</Link></li>
+                <li><Link to={LINKS.register} className="text-black/70 hover:text-[#c8102e] transition-colors">Registration</Link></li>
+                <li><Link to={LINKS.schedule} className="text-black/70 hover:text-[#c8102e] transition-colors">Schedule</Link></li>
+                <li><Link to={LINKS.rules} className="text-black/70 hover:text-[#c8102e] transition-colors">Rules</Link></li>
+                <li><Link to={LINKS.location} className="text-black/70 hover:text-[#c8102e] transition-colors">Location</Link></li>
             </ul>
           </div>
           

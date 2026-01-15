@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react"
 import { LINKS } from "./data/links"
-import RegisterPage from "./pages/register/register"
-import TournamentPage from "./pages/tournament/tournament"
-import FestivalPage from "./pages/festival/festival"
-import AboutPage from "./pages/about/about"
-import RulesPage from "./pages/rules/rules"
-import LocationPage from "./pages/location/location"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
 import skyline from "./assets/montreal-skyline.jpg"
+import { Link } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -20,23 +14,13 @@ export default function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-white text-[#1a1a1a]">
-        <Navbar isLoaded={isLoaded} />
+    <div className="min-h-screen bg-white text-[#1a1a1a]">
+      <Navbar isLoaded={isLoaded} />
 
-        <Routes>
-          <Route path="/" element={<Home isLoaded={isLoaded} />} />
-          <Route path={LINKS.register} element={<RegisterPage />} />
-          <Route path={LINKS.schedule} element={<TournamentPage />} />
-          <Route path={LINKS.festival} element={<FestivalPage />} />
-          <Route path={LINKS.about} element={<AboutPage />} />
-          <Route path={LINKS.rules} element={<RulesPage />} />
-          <Route path={LINKS.location} element={<LocationPage />} />
-        </Routes>
+      <Home isLoaded={isLoaded} />
 
-        <Footer isLoaded={isLoaded} />
-      </div>
-    </BrowserRouter>
+      <Footer isLoaded={isLoaded} />
+    </div>
   )
 }
 
@@ -112,18 +96,18 @@ function Hero({ isLoaded }) {
             </p>
 
             <div className={`flex flex-wrap gap-3 transition-all duration-700 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <a
-                href={LINKS.register}
+              <Link
+                to={LINKS.register}
                 className="border border-[#c8102e] bg-[#c8102e] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
               >
                 Register Now
-              </a>
-              <a
-                href={LINKS.schedule}
+              </Link>
+              <Link
+                to={LINKS.schedule}
                 className="border border-white/50 bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
               >
                 Latest Updates
-              </a>
+              </Link>
             </div>
           </div>
         </div>
