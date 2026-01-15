@@ -3,8 +3,6 @@ import { LINKS } from "./data/links"
 import skyline from "./assets/montreal-skyline.jpg"
 import { Link } from "react-router-dom"
 import "./App.css"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -14,13 +12,9 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a]">
-      <Navbar isLoaded={isLoaded} />
-
+    <>
       <Home isLoaded={isLoaded} />
-
-      <Footer isLoaded={isLoaded} />
-    </div>
+    </>
   )
 }
 
@@ -51,7 +45,7 @@ function Home({ isLoaded }) {
         </div>
       </section>
 
-      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
+      <section className="border-b-2 border-black/10 bg-[#faf8f3] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <CulturalSection isLoaded={isLoaded} />
         </div>
