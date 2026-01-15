@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react"
 import { LINKS } from "./data/links"
+import RegisterPage from "./pages/register/register"
+import TournamentPage from "./pages/tournament/tournament"
+import FestivalPage from "./pages/festival/festival"
+import AboutPage from "./pages/about/about"
+import RulesPage from "./pages/rules/rules"
+import LocationPage from "./pages/location/location"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import skyline from "./assets/montreal-skyline.jpg"
 import "./App.css"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -11,9 +20,29 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a]">
-      <Header isLoaded={isLoaded} />
+    <BrowserRouter>
+      <div className="min-h-screen bg-white text-[#1a1a1a]">
+        <Navbar isLoaded={isLoaded} />
 
+        <Routes>
+          <Route path="/" element={<Home isLoaded={isLoaded} />} />
+          <Route path={LINKS.register} element={<RegisterPage />} />
+          <Route path={LINKS.schedule} element={<TournamentPage />} />
+          <Route path={LINKS.festival} element={<FestivalPage />} />
+          <Route path={LINKS.about} element={<AboutPage />} />
+          <Route path={LINKS.rules} element={<RulesPage />} />
+          <Route path={LINKS.location} element={<LocationPage />} />
+        </Routes>
+
+        <Footer isLoaded={isLoaded} />
+      </div>
+    </BrowserRouter>
+  )
+}
+
+function Home({ isLoaded }) {
+  return (
+    <>
       {/* Full-width hero */}
       <Hero isLoaded={isLoaded} />
 
@@ -43,44 +72,12 @@ export default function App() {
           <CulturalSection isLoaded={isLoaded} />
         </div>
       </section>
-
-      <Footer isLoaded={isLoaded} />
-    </div>
+    </>
   )
 }
 
-function Header({ isLoaded }) {
-  return (
-    <header className={`sticky top-0 z-50 border-b border-black/20 bg-white transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <div className={`flex items-center gap-3 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
-          <div className="h-10 w-0.5 bg-[#c8102e]"></div>
-          <div className="font-bold tracking-wide text-[#c8102e] text-lg" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-            Montreal <span className="text-[#1e3a8a]">NACIVT</span> 2026
-          </div>
-        </div>
 
-        <nav className={`flex gap-8 text-xs font-medium uppercase tracking-widest text-black/70 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-          <a className="hover:text-[#c8102e] transition-colors" href={LINKS.register}>
-            Register
-          </a>
-          <a className="hover:text-[#c8102e] transition-colors" href={LINKS.schedule}>
-            Tournament
-          </a>
-          <a className="hover:text-[#c8102e] transition-colors" href="#">
-            Festival
-          </a>
-          <a className="hover:text-[#c8102e] transition-colors" href="#">
-            About
-          </a>
-            <a className="hover:text-[#c8102e] transition-colors" href="#">
-            Rules
-          </a>
-        </nav>
-      </div>
-    </header>
-  )
-}
+
 
 function Hero({ isLoaded }) {
   return (
@@ -389,51 +386,3 @@ function Detail({ label, value }) {
   )
 }
 
-function Footer({ isLoaded }) {
-  return (
-    <footer className={`border-t-2 border-black/20 bg-white mt-24 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-      <div className="mx-auto max-w-5xl px-6 py-16">
-        <div className="grid gap-16 md:grid-cols-3">
-          <div>
-            <h4 className="font-bold text-black mb-4 text-sm uppercase tracking-wider">
-              NACIVT 2026
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-4"></div>
-            <p className="text-sm text-black/70 leading-relaxed">
-              North American Chinese Invitational Volleyball Tournament
-            </p>
-          </div>
-          
-          <div className="border-l border-black/10 pl-8 md:border-l md:pl-8 md:border-r-0">
-            <h4 className="font-bold text-black mb-4 text-sm uppercase tracking-wider">
-              Quick Links
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-4"></div>
-            <ul className="space-y-3 text-sm">
-              <li><a href={LINKS.register} className="text-black/70 hover:text-[#c8102e] transition-colors">Registration</a></li>
-              <li><a href={LINKS.schedule} className="text-black/70 hover:text-[#c8102e] transition-colors">Schedule</a></li>
-              <li><a href={LINKS.rules} className="text-black/70 hover:text-[#c8102e] transition-colors">Rules</a></li>
-              <li><a href={LINKS.location} className="text-black/70 hover:text-[#c8102e] transition-colors">Location</a></li>
-            </ul>
-          </div>
-          
-          <div className="border-l border-black/10 pl-8 md:border-l md:pl-8">
-            <h4 className="font-bold text-black mb-4 text-sm uppercase tracking-wider">
-              Contact
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-4"></div>
-            <p className="text-sm text-black/70">
-              <a href={LINKS.contact} className="hover:text-[#c8102e] transition-colors">
-                contact@nacivt.com
-              </a>
-            </p>
-          </div>
-        </div>
-        
-        <div className="mt-16 pt-8 border-t-2 border-black/20 text-center text-xs text-black/50 uppercase tracking-wider">
-          © {new Date().getFullYear()} NACIVT Montreal. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  )
-}

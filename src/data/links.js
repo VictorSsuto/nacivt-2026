@@ -1,7 +1,9 @@
 export const LINKS = {
-  register: "#",
-  schedule: "#",
-  location: "#",
-  rules: "#",
+  register: "/register",
+  schedule: "/tournament",
+  festival: "/festival",
+  about: "/about",
+  rules: "/rules",
+  location: "/location",
   contact: "mailto:contact@nacivt.com",
 }
