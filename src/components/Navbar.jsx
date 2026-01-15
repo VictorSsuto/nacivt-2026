@@ -23,7 +23,7 @@ export default function Navbar({ isLoaded }) {
             Tournament
           </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.festival}>
-            Festival
+            Night Market
           </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
             About

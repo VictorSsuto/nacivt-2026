@@ -176,8 +176,8 @@ function IntroBlock({ isLoaded }) {
             </div>
             <dl className="space-y-6">
               <Detail label="Dates" value="Labour Day Weekend, 2026" />
-              <Detail label="Location" value="Montreal Chinatown" />
-              <Detail label="Format" value="9-Man Volleyball + Festival" />
+              <Detail label="Location" value="Palais des Congrès" />
+              <Detail label="Format" value="9-Man Volleyball + Night Market" />
               <Detail label="Contact" value="contact@nacivt.com" />
             </dl>
           </div>
