@@ -32,18 +32,20 @@ function Home({ isLoaded }) {
         <IntroBlock isLoaded={isLoaded} />
       </main>
 
-      {/* Secondary content with more spacing */}
-      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <FeatureCards isLoaded={isLoaded} />
-        </div>
-      </section>
+   
 
       <section className="border-t-2 border-black/10 py-20">
         <div className="mx-auto max-w-5xl px-6">
           <CountdownSection isLoaded={isLoaded} />
         </div>
       </section>
+       {/* Secondary content with more spacing */}
+      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <FeatureCards isLoaded={isLoaded} />
+        </div>
+      </section>
+
 
       <section className="border-b-2 border-black/10 bg-[#faf8f3] py-20">
         <div className="mx-auto max-w-5xl px-6">
