@@ -1,14 +1,14 @@
-import tournamentHero from "../../assets/tournament-hero.jpg"
+import shopHero from "../../assets/shop.jpg"
 
 export default function Shop() {
   return (
     <>
-      <section className="relative h-[40vh] min-h-[320px] w-full overflow-hidden">
+      <section className="relative h-[40vh]  min-h-[320px] w-full overflow-hidden">
         <img
-          src={tournamentHero}
+          src={shopHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_48%]"
         />
 
         <div className="absolute inset-0 bg-[#1e3a8a]/60" />
