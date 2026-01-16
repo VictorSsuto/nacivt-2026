@@ -34,13 +34,13 @@ function Home({ isLoaded }) {
 
    
 
-      <section className="border-t-2 border-black/10 py-20">
+      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <CountdownSection isLoaded={isLoaded} />
         </div>
       </section>
        {/* Secondary content with more spacing */}
-      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
+      <section className="border-t-2 border-black/10 bg-[#ffffff] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <FeatureCards isLoaded={isLoaded} />
         </div>
