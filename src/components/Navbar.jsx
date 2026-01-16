@@ -41,43 +41,9 @@ export default function Navbar({ isLoaded }) {
             Register
           </Link>
 
-          {/* Tournament dropdown */}
-          <div className="relative group">
-            {/* Parent goes to hub page */}
-            <Link
-              to={LINKS.tournament}
-              className="hover:text-[#c8102e] transition-colors"
-            >
-              Tournament
-            </Link>
-
-            {/* hover bridge wrapper */}
-            <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="w-44 border border-black/10 bg-white shadow-sm">
-                {/* Hash links: use <a href> */}
-                <a
-                  href={LINKS.tournamentSchedule}
-                  className="block px-4 py-2 hover:bg-black/5"
-                >
-                  Schedule
-                </a>
-
-                <a
-                  href={LINKS.tournamentBracket}
-                  className="block px-4 py-2 hover:bg-black/5"
-                >
-                  Bracket
-                </a>
-
-                <a
-                  href={LINKS.tournamentRules}
-                  className="block px-4 py-2 hover:bg-black/5"
-                >
-                  Rules
-                </a>
-              </div>
-            </div>
-          </div>
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.tournament}>
+            Tournament
+          </Link>
 
           <Link
             className="hover:text-[#c8102e] transition-colors"
