@@ -14,4 +14,5 @@ export const LINKS = {
   
   contact: "mailto:contact@nacivt.com",
 
+  faq: "/faq",
 }

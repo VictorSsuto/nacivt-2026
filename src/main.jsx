@@ -11,6 +11,8 @@ import Festival from "./pages/festival/festival.jsx"
 import About from "./pages/about/about.jsx"
 import Location from "./pages/location/location.jsx"
 import Shop from "./pages/shop/shop.jsx"
+import Bracket from "./pages/bracket/bracket.jsx"
+import FAQ from "./pages/faq/faq"
 
 
 createRoot(document.getElementById("root")).render(
@@ -19,6 +21,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="register" element={<Register />} />
 
           <Route path="tournament" element={<Tournament />} />
