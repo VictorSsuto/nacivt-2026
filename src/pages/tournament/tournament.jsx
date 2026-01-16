@@ -44,9 +44,8 @@ export default function Tournament() {
       <main className="mx-auto max-w-6xl px-8 py-20">
         <FadeIn>
           <div className="max-w-3xl">
-            <p className="text-lg leading-relaxed text-black/70">
-              Welcome to the tournament hub! Here you'll find all the essential
-              information about the upcoming tournament.
+            <p className="text-xl leading-relaxed text-black/70">
+              <h2>Welcome to the tournament hub!</h2>
             </p>
             <p className="mt-3 text-base text-black/60">
               Stay tuned for updates as we finalize the details.
