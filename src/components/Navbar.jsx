@@ -4,13 +4,15 @@ import { Link } from "react-router-dom"
 export default function Navbar({ isLoaded }) {
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-black/20 bg-white transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+      className={`sticky top-0 z-50 border-b border-black/20 bg-white transition-opacity duration-700 ${
+        isLoaded ? "opacity-100" : "opacity-0"
+      }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <div
-          className={`flex items-center gap-3 transition-all duration-700 delay-100 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-            }`}
+          className={`flex items-center gap-3 transition-all duration-700 delay-100 ${
+            isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+          }`}
         >
           <div className="h-10 w-0.5 bg-[#c8102e]" />
 
@@ -24,14 +26,18 @@ export default function Navbar({ isLoaded }) {
         </div>
 
         <nav
-          className={`flex gap-8 text-xs font-medium uppercase tracking-widest text-black/70 transition-all duration-700 delay-200 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
-            }`}
+          className={`flex gap-8 text-xs font-medium uppercase tracking-widest text-black/70 transition-all duration-700 delay-200 ${
+            isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
+          }`}
         >
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.home}>
             Home
           </Link>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
+          <Link
+            className="hover:text-[#c8102e] transition-colors"
+            to={LINKS.register}
+          >
             Register
           </Link>
 
@@ -73,32 +79,21 @@ export default function Navbar({ isLoaded }) {
             </div>
           </div>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.festival}>
+          <Link
+            className="hover:text-[#c8102e] transition-colors"
+            to={LINKS.festival}
+          >
             Night Market
           </Link>
 
-          {/* About dropdown */}
-          <div className="relative group">
-            {/* Parent goes to About page */}
-            <Link
-              to={LINKS.about}
-              className="hover:text-[#c8102e] transition-colors"
-            >
-              About
-            </Link>
+          {/* FAQ as its own top-level nav item (hash link) */}
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.faq}>
+  FAQ
+</Link>
 
-            {/* hover bridge wrapper */}
-            <div className="absolute left-0 top-full pt-3 opacity-0 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="w-44 border border-black/10 bg-white shadow-sm">
-                <a
-                  href={LINKS.faq}
-                  className="block px-4 py-2 hover:bg-black/5"
-                >
-                  FAQ
-                </a>
-              </div>
-            </div>
-          </div>
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
+            About
+          </Link>
         </nav>
       </div>
     </header>

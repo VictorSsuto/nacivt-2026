@@ -12,5 +12,5 @@ export const LINKS = {
   about: "/about",
   location: "/location",
   contact: "mailto:contact@nacivt.com",
-  faq: "/about#faq",
+  faq: "/faq",
 }
