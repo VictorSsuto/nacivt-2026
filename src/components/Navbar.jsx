@@ -79,7 +79,9 @@ export default function Navbar({ isLoaded }) {
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.festival}>
             Night Market
           </Link>
-
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
+            Shop
+          </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
             About
           </Link>
