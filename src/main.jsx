@@ -12,6 +12,8 @@ import About from "./pages/about/about.jsx"
 import Rules from "./pages/rules/rules.jsx"
 import Location from "./pages/location/location.jsx"
 import Bracket from "./pages/bracket/bracket.jsx"
+import FAQ from "./pages/faq/faq"
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,6 +21,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="register" element={<Register />} />
 
           <Route path="tournament" element={<Tournament />} />
