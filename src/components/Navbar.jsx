@@ -35,7 +35,7 @@ export default function Navbar({ isLoaded }) {
           </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
-            Register
+            Registration
           </Link>
 
           {/* Tournament dropdown */}
