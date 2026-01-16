@@ -51,6 +51,9 @@ export default function Navbar({ isLoaded }) {
           >
             Night Market
           </Link>
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
+            Shop
+          </Link>
 
           {/* FAQ as its own top-level nav item (hash link) */}
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.faq}>
