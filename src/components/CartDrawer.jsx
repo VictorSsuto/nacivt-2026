@@ -11,6 +11,8 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
   const [loading, setLoading] = useState(false)
   const [orderId, setOrderId] = useState(null)
   const [message, setMessage] = useState(null)
+  // Checkout is not live yet — set to `true` to enable
+  const CHECKOUT_LIVE = false
 
   function buildOrderText(id) {
     const lines = []
@@ -110,8 +112,16 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
             </div>
 
             <div>
-              <button onClick={handleCheckout} disabled={loading} className="w-full rounded bg-[#c8102e] text-white py-2">
-                {loading ? "Processing…" : "Checkout — send confirmation"}
+              <button
+                onClick={handleCheckout}
+                disabled={!CHECKOUT_LIVE || loading}
+                aria-disabled={!CHECKOUT_LIVE || loading}
+                title={!CHECKOUT_LIVE ? "Checkout not live yet" : undefined}
+                className={
+                  `w-full rounded py-2 ${(!CHECKOUT_LIVE || loading) ? 'bg-gray-300 text-gray-600 cursor-not-allowed' : 'bg-[#c8102e] text-white'}`
+                }
+              >
+                {loading ? "Processing…" : (!CHECKOUT_LIVE ? "Checkout — Not live" : "Checkout — send confirmation")}
               </button>
             </div>
 
