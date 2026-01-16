@@ -1,53 +1,42 @@
-import { LINKS } from "../data/links"
-import { Link } from "react-router-dom"
-
 export default function Footer({ isLoaded, hasTopDivider = true }) {
-  const topBorderClass = hasTopDivider ? 'border-t-2 border-black/20' : ''
+  const topBorderClass = hasTopDivider ? 'border-t border-black/10' : ''
 
   return (
-    <footer className={`${topBorderClass} bg-white mt-0 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-      <div className="mx-auto max-w-7xl px-8 py-14">
-        <div className="grid gap-12 md:grid-cols-3">
-          <div>
-            <h4 className="font-bold text-black mb-3 text-sm uppercase tracking-wider">
-              NACIVT 2026
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-3"></div>
-            <p className="text-sm text-black/70 leading-relaxed">
-              North American Chinese Invitational Volleyball Tournament
-            </p>
-          </div>
-          
-          <div className="border-l border-black/10 pl-6 md:pl-8">
-            <h4 className="font-bold text-black mb-3 text-sm uppercase tracking-wider">
-              Quick Links
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-3"></div>
-            <ul className="space-y-2 text-sm">
-                <li><Link to={LINKS.home} className="text-black/70 hover:text-[#c8102e] transition-colors">Home</Link></li>
-                <li><Link to={LINKS.register} className="text-black/70 hover:text-[#c8102e] transition-colors">Registration</Link></li>
-                <li><Link to={LINKS.schedule} className="text-black/70 hover:text-[#c8102e] transition-colors">Schedule</Link></li>
-                <li><Link to={LINKS.rules} className="text-black/70 hover:text-[#c8102e] transition-colors">Rules</Link></li>
-                <li><Link to={LINKS.location} className="text-black/70 hover:text-[#c8102e] transition-colors">Location</Link></li>
-            </ul>
-          </div>
-          
-          <div className="border-l border-black/10 pl-6 md:pl-8">
-            <h4 className="font-bold text-black mb-3 text-sm uppercase tracking-wider">
-              Contact
-            </h4>
-            <div className="h-px w-12 bg-black/20 mb-3"></div>
-            <p className="text-sm text-black/70">
-              <a href={LINKS.contact} className="hover:text-[#c8102e] transition-colors">
-                contact@nacivt.com
-              </a>
-            </p>
-          </div>
+    <footer
+      className={`${topBorderClass} bg-gradient-to-r from-[#071233] to-[#1e3a8a] mt-0 text-white transition-all duration-500 ${
+        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-6 py-12 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="font-semibold text-white text-sm uppercase tracking-wider">
+            Follow the Action!
+          </h2>
+
+          <div className="h-px w-12 bg-[#d4af37]/30" />
+
+          <a
+            href="#"
+            aria-label="Instagram (add link later)"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-md
+                       text-white/80 hover:text-[#c8102e]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10z" />
+              <path d="M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 2a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM17.5 6.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+            </svg>
+          </a>
         </div>
-        
-        <div className="mt-10 pt-6 text-center text-xs text-black/50">
-          © {new Date().getFullYear()} NACIVT Montreal. All rights reserved.
-        </div>
+      </div>
+
+      <div className="text-center text-xs text-white/70 pb-4">
+        © {new Date().getFullYear()} Victor Ssuto. All rights reserved.
       </div>
     </footer>
   )

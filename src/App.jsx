@@ -3,6 +3,7 @@ import { LINKS } from "./data/links"
 import skyline from "./assets/montreal-skyline.jpg"
 import { Link } from "react-router-dom"
 import "./App.css"
+import TournamentDetails from "./components/TournamentDetails"
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -39,17 +40,11 @@ function Home({ isLoaded }) {
           <CountdownSection isLoaded={isLoaded} />
         </div>
       </section>
-       {/* Secondary content with more spacing */}
+
+      {/* Tournament details (temporary) */}
       <section className="border-t-2 border-black/10 bg-[#ffffff] py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <FeatureCards isLoaded={isLoaded} />
-        </div>
-      </section>
-
-
-      <section className="border-b-2 border-black/10 bg-[#faf8f3] py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <CulturalSection isLoaded={isLoaded} />
+          <TournamentDetails />
         </div>
       </section>
     </>
@@ -62,11 +57,14 @@ function Home({ isLoaded }) {
 function Hero({ isLoaded }) {
   return (
     <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden">
-      <img
-        src={skyline}
-        alt="Montreal skyline"
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-      />
+     <img
+  src={skyline}
+  alt="Montreal skyline"
+  className={`absolute inset-0 h-full w-full object-cover object-[50%_33%] transition-opacity duration-1000 ${
+    isLoaded ? "opacity-100" : "opacity-0"
+  }`}
+/>
+
 
       {/* Newspaper-style overlay */}
       <div className="absolute inset-0 bg-[#1e3a8a]/80" />
@@ -189,57 +187,7 @@ function IntroBlock({ isLoaded }) {
   )
 }
 
-function FeatureCards({ isLoaded }) {
-  const features = [
-    {
-      title: "Elite Competition",
-      description: "Top-tier 9-man volleyball teams from across North America compete for glory.",
-    },
-    {
-      title: "Cultural Festival",
-      description: "Experience traditional Chinese culture, food, and community celebrations.",
-    },
-    {
-      title: "Montreal Experience",
-      description: "Explore the vibrant Chinatown and rich cultural heritage of Montreal.",
-    },
-    {
-      title: "Community Connection",
-      description: "Connect with generations of players, families, and volleyball enthusiasts.",
-    },
-  ]
 
-  return (
-    <section>
-      <div className={`mb-12 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
-          Tournament Highlights
-        </div>
-        <h2 className="text-3xl font-bold tracking-tight text-black mb-4" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-          What to Expect
-        </h2>
-        <div className="h-px w-16 bg-black/20"></div>
-      </div>
-
-      <div className="grid gap-8 md:grid-cols-2">
-        {features.map((feature, idx) => (
-          <div
-            key={idx}
-            className={`border-b border-black/10 pb-8 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: `${400 + idx * 100}ms` }}
-          >
-            <h3 className="text-xl font-bold text-black mb-3" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-              {feature.title}
-            </h3>
-            <p className="text-base leading-relaxed text-black/70">
-              {feature.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
 
 function CountdownSection({ isLoaded }) {
   const [timeLeft, setTimeLeft] = useState({
@@ -315,43 +263,6 @@ function CountdownSection({ isLoaded }) {
   )
 }
 
-function CulturalSection({ isLoaded }) {
-  return (
-    <section>
-      <div className={`mb-12 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
-          Cultural Heritage
-        </div>
-        <h2 className="text-3xl font-bold tracking-tight text-black mb-4" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-          Tradition & Community
-        </h2>
-        <div className="h-px w-16 bg-black/20"></div>
-      </div>
-
-      <div className="grid gap-12 lg:grid-cols-2">
-        <div className={`transition-all duration-700 delay-400 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-          <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-            Montreal Chinatown
-          </h3>
-          <p className="text-base leading-relaxed text-black/80">
-            Experience the vibrant heart of Montreal's Chinese community. From authentic cuisine
-            to cultural landmarks, Chinatown offers a rich backdrop for this year's tournament.
-          </p>
-        </div>
-
-        <div className={`transition-all duration-700 delay-600 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-          <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-            Chinese Tradition
-          </h3>
-          <p className="text-base leading-relaxed text-black/80">
-            Celebrate generations of Chinese-Canadian heritage through volleyball, food, and
-            community. NACIVT honors the traditions that have shaped our community for over 40 years.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function Detail({ label, value }) {
   return (
