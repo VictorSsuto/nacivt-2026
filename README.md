@@ -39,6 +39,10 @@ npm install
 ```bash
 npm run dev
 ```
+3. create new branch evrytime:
+```bash
+git checkout -b feature/...
+```
 
 Notes:
 - Vite may pick a different port if `5173` is occupied — check the terminal output for the correct `Local` URL (e.g. `http://localhost:5175`).

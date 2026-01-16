@@ -34,6 +34,8 @@ export default function Navbar({ isLoaded }) {
             Home
           </Link>
 
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
+            Registration
           <Link
             className="hover:text-[#c8102e] transition-colors"
             to={LINKS.register}
