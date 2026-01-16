@@ -1,6 +1,54 @@
 import shopHero from "../../assets/shop.jpg"
+import { useEffect, useState } from "react"
+import { PRODUCTS } from "../../data/products"
+import ProductCard from "../../components/ProductCard"
+import CartDrawer from "../../components/CartDrawer"
 
 export default function Shop() {
+  const [cart, setCart] = useState(() => {
+    try {
+      const raw = localStorage.getItem("shop_cart")
+      return raw ? JSON.parse(raw) : {}
+    } catch (e) {
+      return {}
+    }
+  })
+  const [openCart, setOpenCart] = useState(false)
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("shop_cart", JSON.stringify(cart))
+    } catch (e) {}
+  }, [cart])
+
+  function addToCart(product) {
+    setCart((c) => {
+      const next = { ...c }
+      if (!next[product.id]) next[product.id] = { product, qty: 0 }
+      next[product.id].qty += 1
+      return next
+    })
+    setOpenCart(true)
+  }
+
+  function removeFromCart(id) {
+    setCart((c) => {
+      const next = { ...c }
+      delete next[id]
+      return next
+    })
+  }
+
+  function changeQty(id, qty) {
+    setCart((c) => {
+      const next = { ...c }
+      if (next[id]) next[id].qty = qty
+      return next
+    })
+  }
+
+  const itemCount = Object.values(cart).reduce((s, it) => s + it.qty, 0)
+
   return (
     <>
       <section className="relative h-[40vh]  min-h-[320px] w-full overflow-hidden">
@@ -32,9 +80,34 @@ export default function Shop() {
       <main className="mx-auto max-w-6xl px-8 py-20">
         <section id="shop" className="mt-4">
           <h2 className="text-3xl font-bold">Shop</h2>
-          <p className="mt-4 text-base text-black/70">Shop details coming soon.</p>
+          <p className="mt-4 text-base text-black/70">Select items below and add them to your cart.</p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {PRODUCTS.map((p) => (
+              <ProductCard key={p.id} product={p} onAdd={addToCart} />
+            ))}
+          </div>
         </section>
       </main>
+
+      {/* Floating cart button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <button
+          onClick={() => setOpenCart(true)}
+          className="flex items-center gap-3 rounded-full bg-[#1e3a8a] px-4 py-2 text-white shadow-lg"
+        >
+          Cart
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#c8102e] text-sm font-bold">{itemCount}</span>
+        </button>
+      </div>
+
+      <CartDrawer
+        open={openCart}
+        cart={cart}
+        onClose={() => setOpenCart(false)}
+        onRemove={removeFromCart}
+        onChangeQty={changeQty}
+      />
     </>
   )
 }
