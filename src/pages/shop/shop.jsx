@@ -2,6 +2,7 @@ import shopHero from "../../assets/shop.jpg"
 import { useEffect, useState } from "react"
 import { PRODUCTS } from "../../data/products"
 import ProductCard from "../../components/ProductCard"
+import { FadeIn } from "../../components/FadeIn"
 import CartDrawer from "../../components/CartDrawer"
 
 export default function Shop() {
@@ -64,27 +65,33 @@ export default function Shop() {
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
-            <h1
-              className="text-5xl font-bold tracking-tight"
-              style={{ fontFamily: "'Libre Baskerville', serif" }}
-            >
-              Shop
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-white/90">
-              Merchandise and swag coming soon.
-            </p>
+            <FadeIn>
+              <h1
+                className="text-5xl font-bold tracking-tight"
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
+              >
+                Shop
+              </h1>
+              <p className="mt-4 max-w-2xl text-lg text-white/90">
+                Merchandise and swag coming soon.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
 
       <main className="mx-auto max-w-6xl px-8 py-20">
         <section id="shop" className="mt-4">
-          <h2 className="text-3xl font-bold">Shop</h2>
-          <p className="mt-4 text-base text-black/70">Select items below and add them to your cart.</p>
+          <FadeIn>
+            <h2 className="text-3xl font-bold">Shop</h2>
+            <p className="mt-4 text-base text-black/70">Select items below and add them to your cart.</p>
+          </FadeIn>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PRODUCTS.map((p) => (
-              <ProductCard key={p.id} product={p} onAdd={addToCart} />
+            {PRODUCTS.map((p, i) => (
+              <FadeIn key={p.id} delay={i * 80}>
+                <ProductCard product={p} onAdd={addToCart} />
+              </FadeIn>
             ))}
           </div>
         </section>
