@@ -65,17 +65,20 @@ export default function Shop() {
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
-            <FadeIn>
-              <h1
-                className="text-5xl font-bold tracking-tight"
-                style={{ fontFamily: "'Libre Baskerville', serif" }}
-              >
-                Shop
-              </h1>
-              <p className="mt-4 max-w-2xl text-lg text-white/90">
-                Merchandise and swag coming soon.
-              </p>
-            </FadeIn>
+              <FadeIn variant="down">
+                <h1
+                  className="text-5xl font-bold tracking-tight"
+                  style={{ fontFamily: "'Libre Baskerville', serif" }}
+                >
+                  Shop
+                </h1>
+              </FadeIn>
+
+              <FadeIn variant="up" delay={120}>
+                <p className="mt-4 max-w-2xl text-lg text-white/90">
+                  Merchandise and swag coming soon.
+                </p>
+              </FadeIn>
           </div>
         </div>
       </section>
