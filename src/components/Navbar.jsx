@@ -30,9 +30,7 @@ export default function Navbar({ isLoaded }) {
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.home}>
-            Home
-          </Link>
+        
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
             Register
