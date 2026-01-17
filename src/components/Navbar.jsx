@@ -8,7 +8,7 @@ export default function Navbar({ isLoaded }) {
         isLoaded ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:py-5">
         <div
           className={`flex items-center gap-3 transition-all duration-700 delay-100 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
@@ -18,7 +18,7 @@ export default function Navbar({ isLoaded }) {
 
           <Link
             to={LINKS.home}
-            className="text-lg font-bold tracking-wide text-[#c8102e]"
+            className="text-lg md:text-xl font-semibold tracking-wide text-[#c8102e]"
             style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
             Montreal <span className="text-[#1e3a8a]">NACIVT</span> 2026
@@ -26,7 +26,7 @@ export default function Navbar({ isLoaded }) {
         </div>
 
         <nav
-          className={`flex gap-8 text-xs font-medium uppercase tracking-widest text-black/70 transition-all duration-700 delay-200 ${
+          className={`flex items-center gap-6 text-xs md:text-xs font-medium uppercase tracking-wide text-black/70 transition-all duration-700 delay-200 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
@@ -52,8 +52,8 @@ export default function Navbar({ isLoaded }) {
 
           {/* FAQ as its own top-level nav item (hash link) */}
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.faq}>
-  FAQ
-</Link>
+            FAQ
+          </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
             About
