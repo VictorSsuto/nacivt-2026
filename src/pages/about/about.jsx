@@ -10,6 +10,8 @@ export default function About() {
           src={aboutHero}
           alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
