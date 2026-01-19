@@ -36,6 +36,8 @@ export default function Tournament() {
           src={tournamentHero}
           alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
@@ -89,6 +91,8 @@ export default function Tournament() {
                 <img
                   src={scheduleImg}
                   alt="Schedule"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
@@ -117,6 +121,8 @@ export default function Tournament() {
                 <img
                   src={bracketImg}
                   alt="Bracket"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
@@ -145,6 +151,8 @@ export default function Tournament() {
                 <img
                   src={ruleImg}
                   alt="Rules"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />

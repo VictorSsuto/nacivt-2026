@@ -75,7 +75,7 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
           {items.length === 0 && <div className="text-sm text-gray-600">Cart is empty</div>}
           {items.map(({ product, qty }) => (
             <div key={product.id} className="flex items-center gap-3">
-              <img src={product.image} alt={product.name} className="h-12 w-12 object-cover rounded" />
+              <img src={product.image} alt={product.name} loading="lazy" decoding="async" width="48" height="48" className="h-12 w-12 object-cover rounded" />
               <div className="flex-1">
                 <div className="font-medium">{product.name}</div>
                 <div className="text-sm text-gray-600">${product.price} × {qty}</div>

@@ -9,6 +9,8 @@ export default function Activities() {
           src={activitiesHero}
           alt="Activities"
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
