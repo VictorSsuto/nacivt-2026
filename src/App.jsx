@@ -66,7 +66,7 @@ function Hero({ isLoaded }) {
       <img
         src={skyline}
         alt="Montreal skyline"
-        className={`absolute inset-0 h-full w-full object-cover object-[50%_33%] transition-opacity duration-1000 ${
+        className={`absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_33%] transition-opacity duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       />

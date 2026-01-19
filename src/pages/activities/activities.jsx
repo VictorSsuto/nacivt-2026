@@ -9,7 +9,7 @@ export default function Activities() {
           src={activitiesHero}
           alt="Activities"
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
         <div className="absolute inset-0 bg-[#1e3a8a]/60" />

@@ -10,7 +10,7 @@ export default function FAQ() {
           src={faqHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
         {/* Brand overlays */}
