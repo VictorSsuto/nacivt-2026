@@ -10,7 +10,7 @@ export default function Festival() {
 					src={festivalHero}
 					alt="Festival"
 					aria-hidden="true"
-					className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+					className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_30%]"
 				/>
 
 				{/* Brand overlays */}
