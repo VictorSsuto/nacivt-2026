@@ -3,8 +3,31 @@ import bracketImg from "../../assets/bracket.jpg"
 import ruleImg from "../../assets/rule.jpg"
 import tournamentHero from "../../assets/tournament-hero.jpg"
 import { FadeIn } from "../../components/FadeIn"
+import { useCallback } from "react"
 
 export default function Tournament() {
+  const handleCardClick = useCallback((e, id) => {
+    e.preventDefault()
+    const link = e.currentTarget
+
+    // quick press animation
+    link.classList.add("scale-95")
+    setTimeout(() => link.classList.remove("scale-95"), 150)
+
+    // compute target and header offset
+    const target = document.getElementById(id)
+    const header = document.querySelector("header.sticky")
+    const headerHeight = header ? header.getBoundingClientRect().height : 0
+
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
+      window.scrollTo({ top, behavior: "smooth" })
+    } else {
+      // fallback to hash navigation
+      window.location.hash = id
+    }
+  }, [])
+
   return (
     <>
       {/* Slim editorial hero */}
@@ -60,7 +83,8 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#schedule"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "schedule")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={scheduleImg}
@@ -87,7 +111,8 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#bracket"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "bracket")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={bracketImg}
@@ -114,7 +139,8 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#rules"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "rules")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={ruleImg}
