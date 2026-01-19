@@ -66,6 +66,12 @@ export default function Navbar({ isLoaded }) {
                 About
               </Link>
               <Link
+                to={LINKS.activities}
+                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
+              >
+                Activities
+              </Link>
+              <Link
                 to={LINKS.faq}
                 className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
               >
