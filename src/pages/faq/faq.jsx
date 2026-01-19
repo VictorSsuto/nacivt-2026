@@ -1,4 +1,4 @@
-import faqHero from "../../assets/montreal-skyline.jpg"
+import faqHero from "../../assets/faq.jpg"
 import { FadeIn } from "../../components/FadeIn"
 
 export default function FAQ() {

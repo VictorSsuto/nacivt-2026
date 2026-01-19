@@ -9,6 +9,7 @@ import Register from "./pages/register/register.jsx"
 import Tournament from "./pages/tournament/tournament.jsx"
 import Festival from "./pages/festival/festival.jsx"
 import About from "./pages/about/about.jsx"
+import FarRedirect from "./pages/far.jsx"
 import Location from "./pages/location/location.jsx"
 import Shop from "./pages/shop/shop.jsx"
 import Bracket from "./pages/bracket/bracket.jsx"
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="festival" element={<Festival />} />
           <Route path="about" element={<About />} />
+          <Route path="far" element={<FarRedirect />} />
 
           <Route path="shop" element={<Shop />} />
           <Route path="location" element={<Location />} />

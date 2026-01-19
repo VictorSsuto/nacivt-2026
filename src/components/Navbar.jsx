@@ -26,11 +26,13 @@ export default function Navbar({ isLoaded }) {
         </div>
 
         <nav
-          className={`flex items-center gap-6 text-xs md:text-xs font-medium uppercase tracking-wide text-black/70 transition-all duration-700 delay-200 ${
+          className={`flex items-center gap-6 text-sm md:text-sm font-medium normal-case tracking-normal text-black/70 transition-all duration-700 delay-200 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
-        
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.home}>
+            Home
+          </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
             Register
@@ -46,18 +48,29 @@ export default function Navbar({ isLoaded }) {
           >
             Night Market
           </Link>
+
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
             Shop
           </Link>
 
-          {/* FAQ as its own top-level nav item (hash link) */}
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.faq}>
-            FAQ
-          </Link>
+          <div className="relative group">
+            <button className="hover:text-[#c8102e] transition-colors">About</button>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
-            About
-          </Link>
+            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 mt-2 w-40 rounded bg-white border border-black/10 shadow-lg py-2">
+              <Link
+                to={LINKS.about}
+                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
+              >
+                About
+              </Link>
+              <Link
+                to={LINKS.faq}
+                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
+              >
+                FAQ
+              </Link>
+            </div>
+          </div>
         </nav>
       </div>
     </header>

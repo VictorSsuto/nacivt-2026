@@ -1,4 +1,4 @@
-import aboutHero from "../../assets/montreal-skyline.jpg"
+import aboutHero from "../../assets/aboutt.jpg"
 import { FadeIn } from "../../components/FadeIn"
 
 export default function About() {
@@ -81,7 +81,7 @@ export default function About() {
           <aside className="hidden lg:block">
             <div className="sticky top-28">
               <div
-                className="text-4xl font-bold leading-none"
+                className="text-3xl font-bold leading-none"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 About
@@ -123,7 +123,7 @@ export default function About() {
                 id="history"
                 className="scroll-mt-28 border-t border-black/10 pt-12"
               >
-                <h2 className="text-4xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   History
                 </h2>
                 <p className="mt-6 text-base text-black/70">
@@ -139,7 +139,7 @@ export default function About() {
                 id="partners"
                 className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
               >
-                <h2 className="text-4xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   Partners
                 </h2>
                 <p className="mt-6 text-base text-black/70">
@@ -166,7 +166,7 @@ export default function About() {
                 id="hall-of-fame"
                 className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
               >
-                <h2 className="text-4xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   Hall of Fame
                 </h2>
                 <p className="mt-6 text-base text-black/70">
@@ -192,7 +192,7 @@ export default function About() {
                 id="support"
                 className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
               >
-                <h2 className="text-4xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   Support Us
                 </h2>
                 <p className="mt-6 text-base text-black/70">
@@ -228,7 +228,7 @@ export default function About() {
                 id="contact"
                 className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
               >
-                <h2 className="text-4xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
+                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   Contact Us
                 </h2>
                 <p className="mt-6 text-base text-black/70">

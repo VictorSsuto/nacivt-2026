@@ -1,4 +1,4 @@
-import festivalHero from "../../assets/bracket.jpg"
+import festivalHero from "../../assets/festival.jpg"
 import { FadeIn } from "../../components/FadeIn"
 
 export default function Festival() {
@@ -10,7 +10,7 @@ export default function Festival() {
 					src={festivalHero}
 					alt="Festival"
 					aria-hidden="true"
-					className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+					className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
 				/>
 
 				{/* Brand overlays */}
