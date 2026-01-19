@@ -54,7 +54,9 @@ export default function Navbar({ isLoaded }) {
           </Link>
 
           <div className="relative group">
-            <button className="hover:text-[#c8102e] transition-colors">About</button>
+            <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
+              About
+            </Link>
 
             <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 mt-2 w-40 rounded bg-white border border-black/10 shadow-lg py-2">
               <Link
