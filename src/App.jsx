@@ -134,7 +134,7 @@ function Hero({ isLoaded }) {
             </p>
 
             <div
-              className={`flex flex-wrap gap-3 transition-all duration-700 delay-1000 ${
+              className={`flex flex-row flex-wrap sm:flex-nowrap items-center gap-2 min-w-0 transition-all duration-700 delay-1000 ${
                 isLoaded
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
@@ -142,7 +142,7 @@ function Hero({ isLoaded }) {
             >
               <Link
                 to={LINKS.register}
-                className="border border-[#c8102e] bg-[#c8102e] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
+                className="flex-1 min-w-0 text-center border border-[#c8102e] bg-[#c8102e] px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
               >
                 Register Now
               </Link>
@@ -160,7 +160,7 @@ function Hero({ isLoaded }) {
                     navigate("/#tournament-details")
                   }
                 }}
-                className="border border-white/50 bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
+                className="flex-1 min-w-0 text-center border border-white/50 bg-transparent px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
               >
                 Latest Updates
               </button>
