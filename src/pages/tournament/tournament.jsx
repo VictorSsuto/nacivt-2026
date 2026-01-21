@@ -4,9 +4,33 @@ import ruleImg from "../../assets/rule.jpg"
 import tournamentHero from "../../assets/tournament-hero.jpg"
 import { FadeIn } from "../../components/FadeIn"
 import { useTranslation } from "react-i18next"
+import { useCallback } from "react"
 
 export default function Tournament() {
   const { t } = useTranslation()
+  
+  const handleCardClick = useCallback((e, id) => {
+    e.preventDefault()
+    const link = e.currentTarget
+
+    // quick press animation
+    link.classList.add("scale-95")
+    setTimeout(() => link.classList.remove("scale-95"), 150)
+
+    // compute target and header offset
+    const target = document.getElementById(id)
+    const header = document.querySelector("header.sticky")
+    const headerHeight = header ? header.getBoundingClientRect().height : 0
+
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
+      window.scrollTo({ top, behavior: "smooth" })
+    } else {
+      // fallback to hash navigation
+      window.location.hash = id
+    }
+  }, [])
+
   return (
     <>
       {/* Slim editorial hero */}
@@ -15,7 +39,9 @@ export default function Tournament() {
           src={tournamentHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
         {/* Brand overlays */}
@@ -62,11 +88,14 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#schedule"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "schedule")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={scheduleImg}
                   alt="Schedule"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
@@ -89,11 +118,14 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#bracket"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "bracket")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={bracketImg}
                   alt="Bracket"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
@@ -116,11 +148,14 @@ export default function Tournament() {
             <div className="shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <a
                 href="#rules"
-                className="group relative block h-72 overflow-hidden rounded-sm"
+                onClick={(e) => handleCardClick(e, "rules")}
+                className="group relative block h-72 overflow-hidden rounded-sm transition-transform duration-150 active:scale-95"
               >
                 <img
                   src={ruleImg}
                   alt="Rules"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
                 <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />

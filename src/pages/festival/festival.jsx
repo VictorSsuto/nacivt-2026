@@ -1,4 +1,4 @@
-import festivalHero from "../../assets/bracket.jpg"
+import festivalHero from "../../assets/festival.jpg"
 import { FadeIn } from "../../components/FadeIn"
 import { useTranslation } from "react-i18next"
 
@@ -12,7 +12,9 @@ export default function Festival() {
 					src={festivalHero}
 					alt="Festival"
 					aria-hidden="true"
-					className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+					loading="eager"
+					decoding="async"
+					className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_30%]"
 				/>
 
 				{/* Brand overlays */}

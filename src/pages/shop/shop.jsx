@@ -59,7 +59,9 @@ export default function Shop() {
           src={shopHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_48%]"
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_48%]"
         />
 
         <div className="absolute inset-0 bg-[#1e3a8a]/60" />

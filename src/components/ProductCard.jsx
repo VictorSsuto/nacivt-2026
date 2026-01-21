@@ -9,7 +9,9 @@ export default function ProductCard({ product, onAdd }) {
       <div className="h-48 w-full bg-gray-100">
         <img
           src={product.image}
-          alt={t(`products.${product.id.replace('p', '')}.name`) || product.name}
+          alt={t(`products.${product.translationKey}.name`)}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover object-center"
         />
       </div>

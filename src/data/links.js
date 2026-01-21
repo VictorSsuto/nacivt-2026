@@ -10,6 +10,8 @@ export const LINKS = {
 
   festival: "/festival",
   about: "/about",
+  far: "/far",
+  activities: "/activities",
   location: "/location",
   
   contact: "mailto:contact@nacivt.com",
