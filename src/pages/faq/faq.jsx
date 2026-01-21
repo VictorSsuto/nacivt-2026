@@ -1,7 +1,23 @@
 import faqHero from "../../assets/montreal-skyline.jpg"
 import { FadeIn } from "../../components/FadeIn"
+import { useTranslation } from "react-i18next"
 
 export default function FAQ() {
+  const { t } = useTranslation()
+  
+  const faqs = [
+    { q: t('faq.q1'), a: t('faq.a1') },
+    { q: t('faq.q2'), a: t('faq.a2') },
+    { q: t('faq.q3'), a: t('faq.a3') },
+    { q: t('faq.q4'), a: t('faq.a4') },
+    { q: t('faq.q5'), a: t('faq.a5') },
+    { q: t('faq.q6'), a: t('faq.a6') },
+    { q: t('faq.q7'), a: t('faq.a7') },
+    { q: t('faq.q8'), a: t('faq.a8') },
+    { q: t('faq.q9'), a: t('faq.a9') },
+    { q: t('faq.q10'), a: t('faq.a10') },
+  ]
+
   return (
     <>
       {/* Slim editorial hero */}
@@ -24,13 +40,13 @@ export default function FAQ() {
                 className="text-5xl font-bold tracking-tight"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                FAQ
+                {t('faq.pageTitle')}
               </h1>
             </FadeIn>
 
             <FadeIn variant="up" delay={120}>
               <p className="mt-4 max-w-2xl text-lg text-white/90">
-                Answers to common questions about NACIVT 2026.
+                {t('faq.pageSubtitle')}
               </p>
             </FadeIn>
           </div>
@@ -41,108 +57,15 @@ export default function FAQ() {
       <main className="mx-auto max-w-6xl px-8 py-20">
         <FadeIn>
           <section>
-            <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold">{t('faq.title')}</h2>
 
             <div className="mt-8 space-y-6">
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  When and where is NACIVT 2026?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  The tournament will be hosted in Montréal at the Palais des congrès.
-                  Dates and detailed venue info will be announced soon.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  How do teams register?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  Registration details will be posted on the Register page as soon as
-                  divisions and pricing are confirmed.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  What is the tournament layout and seating like?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  A full venue map will be shared before the event, including court layout,
-                  warm-up zones, seating areas, and spectator flow throughout the venue.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  How will repooling and seeding work?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  Repooling and seeding details will be published prior to the tournament.
-                  Pool results will determine placement into the next phase, and repooling
-                  may be used to maintain competitive balance.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  Where can we find end-of-day scores and standings?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  End-of-day scores, pool standings, and bracket updates will be posted online.
-                  The official results link will be shared before the tournament begins.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  Will first aid or physiotherapy be available on site?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  First aid services will be available on site throughout the tournament.
-                  Physiotherapy support details will be announced closer to the event.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  When are the opening and closing ceremonies?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  Ceremony details will be announced once the full tournament schedule is finalized.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  Can we bring food or drinks?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  Food and drink policies will follow venue regulations. We’ll confirm what is
-                  allowed (water bottles, snacks) before tournament week.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  What about language barriers?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  Montréal is French-first. Event information will be available in French, with
-                  English support provided on site by staff and volunteers.
-                </p>
-              </div>
-
-              <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
-                  What currency are prices listed in?
-                </h3>
-                <p className="mt-2 text-black/70">
-                  All prices are listed in Canadian dollars (CAD). For international teams,
-                  your bank or card provider will handle currency conversion automatically.
-                </p>
-              </div>
+              {faqs.map((faq, index) => (
+                <div key={index} className="rounded-sm border border-black/10 p-6">
+                  <h3 className="text-lg font-semibold">{faq.q}</h3>
+                  <p className="mt-2 text-black/70">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </section>
         </FadeIn>

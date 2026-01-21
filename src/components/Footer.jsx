@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next"
+
 export default function Footer({ isLoaded, hasTopDivider = true }) {
+  const { t } = useTranslation()
   const topBorderClass = hasTopDivider ? 'border-t border-black/10' : ''
 
   return (
@@ -10,7 +13,7 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
       <div className="mx-auto max-w-7xl px-6 py-12 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <h2 className="font-semibold text-white text-sm uppercase tracking-wider">
-            Follow the Action!
+            {t('footer.followTitle')}
           </h2>
 
           <div className="h-px w-12 bg-[#d4af37]/30" />
@@ -36,7 +39,7 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
       </div>
 
       <div className="text-center text-xs text-white/70 pb-4">
-        © {new Date().getFullYear()} Victor Ssuto. All rights reserved.
+        {t('footer.copyright', { year: new Date().getFullYear() })}
       </div>
     </footer>
   )

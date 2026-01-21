@@ -5,6 +5,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom"
 import "./App.css"
 import TournamentDetails from "./components/TournamentDetails"
 import { FadeIn } from "./components/FadeIn"
+import { useTranslation } from "react-i18next"
+
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -59,6 +61,7 @@ function Home({ isLoaded }) {
 }
 
 function Hero({ isLoaded }) {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
   return (
@@ -85,7 +88,7 @@ function Hero({ isLoaded }) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Montreal • Labour Day Weekend • North American Chinese Invitational
+              {t('hero.subtitle')}
             </div>
 
             <div
@@ -106,7 +109,7 @@ function Hero({ isLoaded }) {
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  Montreal
+                  {t('hero.title')}
                 </span>
                 <span
                   className={`block text-[#d4af37] mt-1 transition-all duration-700 delay-700 ${
@@ -115,7 +118,7 @@ function Hero({ isLoaded }) {
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  NACIVT 2026
+                  {t('hero.titleHighlight')}
                 </span>
               </h1>
             </div>
@@ -127,8 +130,7 @@ function Hero({ isLoaded }) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Welcome back to the heart of Montreal's Chinatown for a weekend of
-              elite volleyball, community, and celebration.
+              {t('hero.description')}
             </p>
 
             <div
@@ -142,7 +144,7 @@ function Hero({ isLoaded }) {
                 to={LINKS.register}
                 className="border border-[#c8102e] bg-[#c8102e] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
               >
-                Register Now
+                {t('hero.registerButton')}
               </Link>
               <button
                 onClick={(e) => {
@@ -160,7 +162,7 @@ function Hero({ isLoaded }) {
                 }}
                 className="border border-white/50 bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
               >
-                Latest Updates
+                {t('hero.updatesButton')}
               </button>
             </div>
           </div>
@@ -171,11 +173,12 @@ function Hero({ isLoaded }) {
 }
 
 function StatsSection() {
+  const { t } = useTranslation()
   const stats = [
-    { number: "200+", label: "Teams Competing" },
-    { number: "3", label: "Days of Competition" },
-    { number: "4000+", label: "Expected Attendees" },
-    { number: "80+", label: "Years of Tradition" },
+    { number: "200+", label: t('stats.teams') },
+    { number: "3", label: t('stats.days') },
+    { number: "4000+", label: t('stats.attendees') },
+    { number: "80+", label: t('stats.tradition') },
   ]
 
   return (
@@ -202,6 +205,7 @@ function StatsSection() {
 }
 
 function IntroBlock() {
+  const { t } = useTranslation()
   return (
     <section className="mt-12">
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
@@ -209,28 +213,24 @@ function IntroBlock() {
         <FadeIn className="lg:col-span-8" variant="up" delay={0}>
           <div>
             <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-4">
-              Tournament Preview
+              {t('intro.sectionLabel')}
             </div>
             <h2
               className="text-4xl font-bold tracking-tight text-black mb-6"
               style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
-              Volleyball. <span className="text-[#c8102e]">Culture.</span>{" "}
-              <span className="text-[#1e3a8a]">Tradition.</span>
+              {t('intro.title')} <span className="text-[#c8102e]">{t('intro.culture')}</span>{" "}
+              <span className="text-[#1e3a8a]">{t('intro.tradition')}</span>
             </h2>
 
             <div className="h-px w-16 bg-black/20 mb-8"></div>
 
             <p className="text-lg leading-relaxed text-black/80 mb-6">
-              Montreal NACIVT returns to the heart of Chinatown for a weekend that
-              blends elite 9-man volleyball with community, history, and
-              celebration.
+              {t('intro.paragraph1')}
             </p>
 
             <p className="text-lg leading-relaxed text-black/80">
-              For generations, NACIVT has brought together teams and families
-              from across North America. In 2026, we continue that tradition
-              with competition, culture, and connection.
+              {t('intro.paragraph2')}
             </p>
           </div>
         </FadeIn>
@@ -239,13 +239,13 @@ function IntroBlock() {
         <FadeIn className="lg:col-span-4" variant="up" delay={120}>
           <div className="border-l-2 border-black/20 pl-6">
             <div className="text-xs font-medium uppercase tracking-widest text-black/60 mb-6">
-              Event Details
+              {t('intro.detailsTitle')}
             </div>
             <dl className="space-y-6">
-              <Detail label="Dates" value="Labour Day Weekend, 2026" />
-              <Detail label="Location" value="Palais des Congrès" />
-              <Detail label="Format" value="9-Man Volleyball + Night Market" />
-              <Detail label="Contact" value="contact@nacivt.com" />
+              <Detail label={t('intro.dates')} value={t('intro.datesValue')} />
+              <Detail label={t('intro.location')} value={t('intro.locationValue')} />
+              <Detail label={t('intro.format')} value={t('intro.formatValue')} />
+              <Detail label={t('intro.contact')} value={t('intro.contactValue')} />
             </dl>
           </div>
         </FadeIn>
@@ -254,6 +254,7 @@ function IntroBlock() {
   )
 }
 function CountdownSection() {
+  const { t } = useTranslation()
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -288,10 +289,10 @@ function CountdownSection() {
   }, [])
 
   const timeUnits = [
-    { value: timeLeft.days, label: "Days" },
-    { value: timeLeft.hours, label: "Hours" },
-    { value: timeLeft.minutes, label: "Minutes" },
-    { value: timeLeft.seconds, label: "Seconds" },
+    { value: timeLeft.days, label: t('countdown.days') },
+    { value: timeLeft.hours, label: t('countdown.hours') },
+    { value: timeLeft.minutes, label: t('countdown.minutes') },
+    { value: timeLeft.seconds, label: t('countdown.seconds') },
   ]
 
   return (
@@ -299,17 +300,17 @@ function CountdownSection() {
       <FadeIn variant="up" delay={0}>
         <div className="text-center mb-12">
           <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
-            Countdown
+            {t('countdown.label')}
           </div>
           <h2
             className="text-3xl font-bold tracking-tight text-black mb-2"
             style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
-            NACIVT 2026
+            {t('countdown.title')}
           </h2>
           <div className="h-px w-16 bg-black/20 mx-auto my-4"></div>
           <p className="text-sm text-black/60 uppercase tracking-wider">
-            Labour Day Weekend • Aug 30 – Sep 1, 2026
+            {t('countdown.subtitle')}
           </p>
         </div>
       </FadeIn>

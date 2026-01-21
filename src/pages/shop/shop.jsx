@@ -4,8 +4,10 @@ import { PRODUCTS } from "../../data/products"
 import ProductCard from "../../components/ProductCard"
 import { FadeIn } from "../../components/FadeIn"
 import CartDrawer from "../../components/CartDrawer"
+import { useTranslation } from "react-i18next"
 
 export default function Shop() {
+  const { t } = useTranslation()
   const [cart, setCart] = useState(() => {
     try {
       const raw = localStorage.getItem("shop_cart")
@@ -70,13 +72,13 @@ export default function Shop() {
                   className="text-5xl font-bold tracking-tight"
                   style={{ fontFamily: "'Libre Baskerville', serif" }}
                 >
-                  Shop
+                  {t('shop.pageTitle')}
                 </h1>
               </FadeIn>
 
               <FadeIn variant="up" delay={120}>
                 <p className="mt-4 max-w-2xl text-lg text-white/90">
-                  Merchandise and swag coming soon.
+                  {t('shop.pageSubtitle')}
                 </p>
               </FadeIn>
           </div>
@@ -86,8 +88,8 @@ export default function Shop() {
       <main className="mx-auto max-w-6xl px-8 py-20">
         <section id="shop" className="mt-4">
           <FadeIn>
-            <h2 className="text-3xl font-bold">Shop</h2>
-            <p className="mt-4 text-base text-black/70">Select items below and add them to your cart.</p>
+            <h2 className="text-3xl font-bold">{t('shop.sectionTitle')}</h2>
+            <p className="mt-4 text-base text-black/70">{t('shop.sectionDescription')}</p>
           </FadeIn>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -106,7 +108,7 @@ export default function Shop() {
           onClick={() => setOpenCart(true)}
           className="flex items-center gap-3 rounded-full bg-[#1e3a8a] px-4 py-2 text-white shadow-lg"
         >
-          Cart
+          {t('shop.cart')}
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#c8102e] text-sm font-bold">{itemCount}</span>
         </button>
       </div>

@@ -4,6 +4,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import BackToTop from "./components/BackToTop"
 import { Outlet, useLocation } from "react-router-dom"
 
+
 export default function Layout() {
   const location = useLocation()
 

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty }) {
+  const { t } = useTranslation()
   if (!open) return null
 
   const items = Object.values(cart)
@@ -67,12 +69,12 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
       <div className="flex-1" onClick={onClose} />
       <div className="w-96 max-w-full bg-white shadow-xl p-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold">Cart</h3>
+          <h3 className="text-lg font-bold">{t('shop.cart')}</h3>
           <button onClick={onClose} className="text-gray-500">Close</button>
         </div>
 
         <div className="mt-4 space-y-3">
-          {items.length === 0 && <div className="text-sm text-gray-600">Cart is empty</div>}
+          {items.length === 0 && <div className="text-sm text-gray-600">{t('shop.emptyCart')}</div>}
           {items.map(({ product, qty }) => (
             <div key={product.id} className="flex items-center gap-3">
               <img src={product.image} alt={product.name} className="h-12 w-12 object-cover rounded" />
@@ -96,7 +98,7 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
 
         <div className="mt-6 border-t pt-4">
           <div className="flex items-center justify-between font-semibold">
-            <div>Total</div>
+            <div>{t('shop.total')}</div>
             <div>${total.toFixed(2)}</div>
           </div>
 
@@ -121,7 +123,7 @@ export default function CartDrawer({ open, cart, onClose, onRemove, onChangeQty 
                   `w-full rounded py-2 ${(!CHECKOUT_LIVE || loading) ? 'bg-gray-300 text-gray-600 cursor-not-allowed' : 'bg-[#c8102e] text-white'}`
                 }
               >
-                {loading ? "Processing…" : (!CHECKOUT_LIVE ? "Checkout — Not live" : "Checkout — send confirmation")}
+                {loading ? "Processing…" : (!CHECKOUT_LIVE ? `${t('shop.checkout')} — Not live` : `${t('shop.checkout')} — send confirmation`)}
               </button>
             </div>
 

@@ -1,7 +1,9 @@
 import aboutHero from "../../assets/montreal-skyline.jpg"
 import { FadeIn } from "../../components/FadeIn"
+import { useTranslation } from "react-i18next"
 
 export default function About() {
+  const { t } = useTranslation()
   return (
     <>
       {/* Slim editorial hero */}
@@ -24,13 +26,13 @@ export default function About() {
                 className="text-5xl font-bold tracking-tight"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                About
+                {t('about.pageTitle')}
               </h1>
             </FadeIn>
 
             <FadeIn variant="up" delay={120}>
               <p className="mt-4 max-w-2xl text-lg text-white/90">
-                History, partners, participants, and how to support NACIVT 2026.
+                {t('about.pageSubtitle')}
               </p>
             </FadeIn>
           </div>
@@ -43,11 +45,10 @@ export default function About() {
         <FadeIn>
           <div className="max-w-3xl">
             <h2 className="text-xl leading-relaxed text-black/70">
-              Welcome to NACIVT 2026.
+              {t('about.welcomeTitle')}
             </h2>
             <p className="mt-3 text-base text-black/60">
-              This page will be updated as we finalize details about the event,
-              participating teams, and partners.
+              {t('about.welcomeDescription')}
             </p>
           </div>
         </FadeIn>
@@ -69,7 +70,7 @@ export default function About() {
                 />
               </div>
               <p className="mt-3 text-sm text-black/50">
-                Video highlight — more media will be added closer to the event.
+                {t('about.videoCaption')}
               </p>
             </div>
           </section>
@@ -84,7 +85,7 @@ export default function About() {
                 className="text-4xl font-bold leading-none"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                About
+                {t('about.aboutTitle')}
               </div>
 
               <nav className="mt-8 space-y-6 text-sm">
@@ -92,13 +93,13 @@ export default function About() {
                   href="#history"
                   className="block text-[#c8102e] hover:underline"
                 >
-                  History
+                  {t('about.history')}
                 </a>
                 <a
                   href="#partners"
                   className="block text-[#c8102e] hover:underline"
                 >
-                  Partners
+                  {t('about.partners')}
                 </a>
                 <a
                   href="#hall-of-fame"

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FadeIn } from "../../components/FadeIn";
 import registerImg from "../../assets/register.jpg";
 import RegistrationAlert from "./alert";
+import { useTranslation } from "react-i18next";
 
 const CANADA_TZ = "America/Toronto";
 
@@ -26,6 +27,7 @@ function daysUntilCanada(dateString) {
 }
 
 export default function Register() {
+  const { t } = useTranslation()
   const [showAlert, setShowAlert] = useState(false);
   const [daysLeft, setDaysLeft] = useState(0);
 
@@ -68,13 +70,13 @@ export default function Register() {
                 className="text-5xl font-bold tracking-tight"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                Registration Information
+                {t('register.pageTitle')}
               </h1>
             </FadeIn>
 
             <FadeIn variant="up" delay={120}>
               <p className="mt-4 max-w-2xl text-lg text-white/90">
-                Important dates and details for registering for NACIVT 2026.
+                {t('register.pageSubtitle')}
               </p>
             </FadeIn>
           </div>
@@ -86,15 +88,15 @@ export default function Register() {
         <FadeIn>
           <div className="max-w-3xl">
             <h2 className="text-xl font-medium text-black/70">
-              Registration Dates
+              {t('register.datesTitle')}
             </h2>
 
             <div className="h-px w-16 bg-black/20 mt-2 mb-4"></div>
 
             <p className="text-base text-black/60">
-              <strong>Early:</strong><br />
-              <strong>Regular:</strong><br />
-              <strong>Late:</strong>
+              <strong>{t('register.early')}</strong><br />
+              <strong>{t('register.regular')}</strong><br />
+              <strong>{t('register.late')}</strong>
             </p>
           </div>
         </FadeIn>

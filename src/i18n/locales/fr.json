@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "register": "Inscription",
+    "tournament": "Tournoi",
+    "nightMarket": "Marché Nocturne",
+    "shop": "Boutique",
+    "faq": "FAQ",
+    "about": "À Propos"
+  },
+  "hero": {
+    "subtitle": "Montréal • Fin de semaine de la fête du Travail • Invitational Chinois Nord-Américain",
+    "title": "Montréal",
+    "titleHighlight": "NACIVT 2026",
+    "description": "Bienvenue au cœur du quartier chinois de Montréal pour une fin de semaine de volleyball d'élite, de communauté et de célébration.",
+    "registerButton": "S'inscrire Maintenant",
+    "updatesButton": "Dernières Nouvelles"
+  },
+  "stats": {
+    "teams": "Équipes en Compétition",
+    "days": "Jours de Compétition",
+    "attendees": "Participants Attendus",
+    "tradition": "Années de Tradition"
+  },
+  "intro": {
+    "sectionLabel": "Aperçu du Tournoi",
+    "title": "Volleyball.",
+    "culture": "Culture.",
+    "tradition": "Tradition.",
+    "paragraph1": "Le NACIVT de Montréal revient au cœur du quartier chinois pour une fin de semaine qui mélange le volleyball d'élite à 9 joueurs avec la communauté, l'histoire et la célébration.",
+    "paragraph2": "Depuis des générations, le NACIVT rassemble des équipes et des familles de toute l'Amérique du Nord. En 2026, nous continuons cette tradition avec compétition, culture et connexion.",
+    "detailsTitle": "Détails de l'Événement",
+    "dates": "Dates",
+    "datesValue": "Fin de semaine de la fête du Travail, 2026",
+    "location": "Lieu",
+    "locationValue": "Palais des Congrès",
+    "format": "Format",
+    "formatValue": "Volleyball à 9 joueurs + Marché Nocturne",
+    "contact": "Contact",
+    "contactValue": "contact@nacivt.com"
+  },
+  "countdown": {
+    "label": "Compte à Rebours",
+    "title": "NACIVT 2026",
+    "subtitle": "Fin de semaine de la fête du Travail • 30 août – 1er sept. 2026",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes"
+  },
+  "shop": {
+    "pageTitle": "Boutique",
+    "pageSubtitle": "Marchandises et produits dérivés à venir bientôt.",
+    "sectionTitle": "Boutique",
+    "sectionDescription": "Sélectionnez les articles ci-dessous et ajoutez-les à votre panier.",
+    "addToCart": "Ajouter au Panier",
+    "cart": "Panier",
+    "checkout": "Commander",
+    "total": "Total",
+    "emptyCart": "Votre panier est vide"
+  },
+  "products": {
+    "tshirt": {
+      "name": "T-shirt NACIVT",
+      "description": "T-shirt en coton confortable avec logo NACIVT."
+    },
+    "cap": {
+      "name": "Casquette NACIVT",
+      "description": "Casquette de baseball classique avec logo brodé."
+    },
+    "poster": {
+      "name": "Affiche NACIVT",
+      "description": "Affiche de l'événement."
+    }
+  },
+  "register": {
+    "pageTitle": "Informations d'Inscription",
+    "pageSubtitle": "Dates importantes et détails pour s'inscrire au NACIVT 2026.",
+    "datesTitle": "Dates d'Inscription",
+    "early": "Hâtive :",
+    "regular": "Régulière :",
+    "late": "Tardive :"
+  },
+  "tournament": {
+    "pageTitle": "Tournoi",
+    "pageSubtitle": "Horaire, tableaux et règlements pour le NACIVT 2026.",
+    "welcomeTitle": "Bienvenue au centre du tournoi !",
+    "welcomeDescription": "Restez à l'affût des mises à jour pendant que nous finalisons les détails.",
+    "schedule": "Horaire",
+    "scheduleLabel": "Tournoi",
+    "scheduleDescription": "Voir les heures de match et les lieux",
+    "scheduleContent": "L'horaire sera publié prochainement.",
+    "bracket": "Tableau",
+    "bracketDescription": "Suivre la progression du tournoi",
+    "bracketContent": "Le tableau sera publié prochainement.",
+    "rules": "Règlements",
+    "rulesDescription": "Directives officielles du tournoi",
+    "rulesContent": "Les règlements seront publiés prochainement."
+  },
+  "festival": {
+    "pageTitle": "Festival",
+    "pageSubtitle": "Marché nocturne, événements communautaires, nourriture et divertissement.",
+    "description": "Les informations sur le festival seront bientôt disponibles. Revenez pour les vendeurs, les horaires et les détails de programmation."
+  },
+  "about": {
+    "pageTitle": "À Propos",
+    "pageSubtitle": "Histoire, partenaires, participants et comment soutenir le NACIVT 2026.",
+    "welcomeTitle": "Bienvenue au NACIVT 2026.",
+    "welcomeDescription": "Cette page sera mise à jour au fur et à mesure que nous finalisons les détails sur l'événement, les équipes participantes et les partenaires.",
+    "videoCaption": "Vidéo des moments forts — plus de médias seront ajoutés à l'approche de l'événement.",
+    "aboutTitle": "À Propos",
+    "history": "Histoire",
+    "partners": "Partenaires",
+    "participants": "Participants",
+    "support": "Comment Soutenir"
+  },
+  "faq": {
+    "pageTitle": "FAQ",
+    "pageSubtitle": "Réponses aux questions courantes sur le NACIVT 2026.",
+    "title": "Foire aux Questions",
+    "q1": "Quand et où aura lieu le NACIVT 2026 ?",
+    "a1": "Le tournoi se tiendra à Montréal au Palais des congrès. Les dates et les informations détaillées sur le lieu seront annoncées prochainement.",
+    "q2": "Comment les équipes s'inscrivent-elles ?",
+    "a2": "Les détails de l'inscription seront publiés sur la page d'inscription dès que les divisions et les prix seront confirmés.",
+    "q3": "Comment est l'aménagement du tournoi et les sièges ?",
+    "a3": "Un plan complet du lieu sera partagé avant l'événement, comprenant la disposition des terrains, les zones d'échauffement, les zones de sièges et le flux des spectateurs dans tout le lieu.",
+    "q4": "Comment fonctionneront le repoule et le classement ?",
+    "a4": "Les détails du repoule et du classement seront publiés avant le tournoi. Les résultats des poules détermineront le placement dans la phase suivante, et le repoule pourra être utilisé pour maintenir l'équilibre compétitif.",
+    "q5": "Où pouvons-nous trouver les scores et les classements de fin de journée ?",
+    "a5": "Les scores de fin de journée, les classements des poules et les mises à jour des tableaux seront publiés en ligne. Le lien vers les résultats officiels sera partagé avant le début du tournoi.",
+    "q6": "Y aura-t-il des premiers soins ou de la physiothérapie sur place ?",
+    "a6": "Les services de premiers soins seront disponibles sur place tout au long du tournoi. Les détails du soutien en physiothérapie seront annoncés plus près de l'événement.",
+    "q7": "Quand auront lieu les cérémonies d'ouverture et de clôture ?",
+    "a7": "Les détails des cérémonies seront annoncés une fois que l'horaire complet du tournoi sera finalisé.",
+    "q8": "Peut-on apporter de la nourriture ou des boissons ?",
+    "a8": "Les politiques sur la nourriture et les boissons suivront les règlements du lieu. Nous confirmerons ce qui est autorisé (bouteilles d'eau, collations) avant la semaine du tournoi.",
+    "q9": "Qu'en est-il des barrières linguistiques ?",
+    "a9": "Montréal est d'abord francophone. Les informations sur l'événement seront disponibles en français, avec un soutien en anglais fourni sur place par le personnel et les bénévoles.",
+    "q10": "Dans quelle devise les prix sont-ils affichés ?",
+    "a10": "Tous les prix sont affichés en dollars canadiens (CAD). Pour les équipes internationales, votre banque ou fournisseur de carte gérera automatiquement la conversion de devises."
+  },
+  "footer": {
+    "followTitle": "Suivez l'Action !",
+    "copyright": "© {{year}} Victor Ssuto. Tous droits réservés."
+  }
+}

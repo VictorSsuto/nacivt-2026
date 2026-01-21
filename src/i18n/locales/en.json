@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "register": "Register",
+    "tournament": "Tournament",
+    "nightMarket": "Night Market",
+    "shop": "Shop",
+    "faq": "FAQ",
+    "about": "About"
+  },
+  "hero": {
+    "subtitle": "Montreal • Labour Day Weekend • North American Chinese Invitational",
+    "title": "Montreal",
+    "titleHighlight": "NACIVT 2026",
+    "description": "Welcome back to the heart of Montreal's Chinatown for a weekend of elite volleyball, community, and celebration.",
+    "registerButton": "Register Now",
+    "updatesButton": "Latest Updates"
+  },
+  "stats": {
+    "teams": "Teams Competing",
+    "days": "Days of Competition",
+    "attendees": "Expected Attendees",
+    "tradition": "Years of Tradition"
+  },
+  "intro": {
+    "sectionLabel": "Tournament Preview",
+    "title": "Volleyball.",
+    "culture": "Culture.",
+    "tradition": "Tradition.",
+    "paragraph1": "Montreal NACIVT returns to the heart of Chinatown for a weekend that blends elite 9-man volleyball with community, history, and celebration.",
+    "paragraph2": "For generations, NACIVT has brought together teams and families from across North America. In 2026, we continue that tradition with competition, culture, and connection.",
+    "detailsTitle": "Event Details",
+    "dates": "Dates",
+    "datesValue": "Labour Day Weekend, 2026",
+    "location": "Location",
+    "locationValue": "Palais des Congrès",
+    "format": "Format",
+    "formatValue": "9-Man Volleyball + Night Market",
+    "contact": "Contact",
+    "contactValue": "contact@nacivt.com"
+  },
+  "countdown": {
+    "label": "Countdown",
+    "title": "NACIVT 2026",
+    "subtitle": "Labour Day Weekend • Aug 30 – Sep 1, 2026",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "shop": {
+    "pageTitle": "Shop",
+    "pageSubtitle": "Merchandise and swag coming soon.",
+    "sectionTitle": "Shop",
+    "sectionDescription": "Select items below and add them to your cart.",
+    "addToCart": "Add to Cart",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "total": "Total",
+    "emptyCart": "Your cart is empty"
+  },
+  "products": {
+    "tshirt": {
+      "name": "NACIVT T-shirt",
+      "description": "Comfortable cotton tee with NACIVT logo."
+    },
+    "cap": {
+      "name": "NACIVT Cap",
+      "description": "Classic baseball cap with embroidered logo."
+    },
+    "poster": {
+      "name": "NACIVT Poster",
+      "description": "Event poster."
+    }
+  },
+  "register": {
+    "pageTitle": "Registration Information",
+    "pageSubtitle": "Important dates and details for registering for NACIVT 2026.",
+    "datesTitle": "Registration Dates",
+    "early": "Early:",
+    "regular": "Regular:",
+    "late": "Late:"
+  },
+  "tournament": {
+    "pageTitle": "Tournament",
+    "pageSubtitle": "Schedule, brackets, and rules for NACIVT 2026.",
+    "welcomeTitle": "Welcome to the tournament hub!",
+    "welcomeDescription": "Stay tuned for updates as we finalize the details.",
+    "schedule": "Schedule",
+    "scheduleLabel": "Tournament",
+    "scheduleDescription": "View game times and venues",
+    "scheduleContent": "Schedule to be posted.",
+    "bracket": "Bracket",
+    "bracketDescription": "Track tournament progression",
+    "bracketContent": "Bracket to be posted.",
+    "rules": "Rules",
+    "rulesDescription": "Official tournament guidelines",
+    "rulesContent": "Rules to be posted."
+  },
+  "festival": {
+    "pageTitle": "Festival",
+    "pageSubtitle": "Night Market, community events, food, and entertainment.",
+    "description": "Festival information is coming soon. Check back for vendors, schedules, and programming details."
+  },
+  "about": {
+    "pageTitle": "About",
+    "pageSubtitle": "History, partners, participants, and how to support NACIVT 2026.",
+    "welcomeTitle": "Welcome to NACIVT 2026.",
+    "welcomeDescription": "This page will be updated as we finalize details about the event, participating teams, and partners.",
+    "videoCaption": "Video highlight — more media will be added closer to the event.",
+    "aboutTitle": "About",
+    "history": "History",
+    "partners": "Partners",
+    "participants": "Participants",
+    "support": "How to Support"
+  },
+  "faq": {
+    "pageTitle": "FAQ",
+    "pageSubtitle": "Answers to common questions about NACIVT 2026.",
+    "title": "Frequently Asked Questions",
+    "q1": "When and where is NACIVT 2026?",
+    "a1": "The tournament will be hosted in Montréal at the Palais des congrès. Dates and detailed venue info will be announced soon.",
+    "q2": "How do teams register?",
+    "a2": "Registration details will be posted on the Register page as soon as divisions and pricing are confirmed.",
+    "q3": "What is the tournament layout and seating like?",
+    "a3": "A full venue map will be shared before the event, including court layout, warm-up zones, seating areas, and spectator flow throughout the venue.",
+    "q4": "How will repooling and seeding work?",
+    "a4": "Repooling and seeding details will be published prior to the tournament. Pool results will determine placement into the next phase, and repooling may be used to maintain competitive balance.",
+    "q5": "Where can we find end-of-day scores and standings?",
+    "a5": "End-of-day scores, pool standings, and bracket updates will be posted online. The official results link will be shared before the tournament begins.",
+    "q6": "Will first aid or physiotherapy be available on site?",
+    "a6": "First aid services will be available on site throughout the tournament. Physiotherapy support details will be announced closer to the event.",
+    "q7": "When are the opening and closing ceremonies?",
+    "a7": "Ceremony details will be announced once the full tournament schedule is finalized.",
+    "q8": "Can we bring food or drinks?",
+    "a8": "Food and drink policies will follow venue regulations. We'll confirm what is allowed (water bottles, snacks) before tournament week.",
+    "q9": "What about language barriers?",
+    "a9": "Montréal is French-first. Event information will be available in French, with English support provided on site by staff and volunteers.",
+    "q10": "What currency are prices listed in?",
+    "a10": "All prices are listed in Canadian dollars (CAD). For international teams, your bank or card provider will handle currency conversion automatically."
+  },
+  "footer": {
+    "followTitle": "Follow the Action!",
+    "copyright": "© {{year}} Victor Ssuto. All rights reserved."
+  }
+}

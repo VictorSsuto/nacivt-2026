@@ -3,6 +3,7 @@ import itemPlaceHolder from "../assets/itemPlaceHolder.jpg"
 export const PRODUCTS = [
   {
     id: "p1",
+    translationKey: "tshirt",
     name: "NACIVT T-shirt",
     price: 25,
     image: itemPlaceHolder,
@@ -10,6 +11,7 @@ export const PRODUCTS = [
   },
   {
     id: "p2",
+    translationKey: "cap",
     name: "NACIVT Cap",
     price: 18,
     image: itemPlaceHolder,
@@ -17,6 +19,7 @@ export const PRODUCTS = [
   },
   {
     id: "p3",
+    translationKey: "poster",
     name: "NACIVT Poster",
     price: 10,
     image: itemPlaceHolder,

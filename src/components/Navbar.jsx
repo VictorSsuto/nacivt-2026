@@ -1,7 +1,15 @@
 import { LINKS } from "../data/links"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export default function Navbar({ isLoaded }) {
+  const { t, i18n } = useTranslation()
+  
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'fr' : 'en'
+    i18n.changeLanguage(newLang)
+  }
+
   return (
     <header
       className={`sticky top-0 z-50 border-b border-black/20 bg-white transition-opacity duration-700 ${
@@ -33,31 +41,40 @@ export default function Navbar({ isLoaded }) {
         
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
-            Register
+            {t('nav.register')}
           </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.tournament}>
-            Tournament
+            {t('nav.tournament')}
           </Link>
 
           <Link
             className="hover:text-[#c8102e] transition-colors"
             to={LINKS.festival}
           >
-            Night Market
+            {t('nav.nightMarket')}
           </Link>
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
-            Shop
+            {t('nav.shop')}
           </Link>
 
           {/* FAQ as its own top-level nav item (hash link) */}
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.faq}>
-            FAQ
+            {t('nav.faq')}
           </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
-            About
+            {t('nav.about')}
           </Link>
+          
+          {/* Language switcher */}
+          <button
+            onClick={toggleLanguage}
+            className="ml-2 px-3 py-1 text-xs font-bold uppercase border border-[#c8102e] text-[#c8102e] hover:bg-[#c8102e] hover:text-white transition-colors rounded"
+            aria-label="Toggle language"
+          >
+            {i18n.language === 'en' ? 'FR' : 'EN'}
+          </button>
         </nav>
       </div>
     </header>
