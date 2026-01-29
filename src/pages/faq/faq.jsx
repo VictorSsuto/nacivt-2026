@@ -1,7 +1,10 @@
 import faqHero from "../../assets/faq.jpg"
 import { FadeIn } from "../../components/FadeIn"
+import { useState } from 'react'
 
 export default function FAQ() {
+  const [showMap, setShowMap] = useState(false);
+
   return (
     <>
       {/* Slim editorial hero */}
@@ -47,9 +50,20 @@ export default function FAQ() {
 
             <div className="mt-8 space-y-6">
               <div className="rounded-sm border border-black/10 p-6">
-                <h3 className="text-lg font-semibold">
+                <h3 onClick={() => setShowMap(!showMap)} className="cursor-pointer text-lg font-semibold">
                   When and where is NACIVT 2026?
                 </h3>
+                 
+                {showMap && (
+                <div className="mt-8 h-[420px] overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/10">
+                <iframe
+                  title="NACIVT Custom Map"
+                  src="https://www.google.com/maps/d/u/0/embed?mid=14AU7n4Lg_emQV5raFiaJDEQjpyNO1EA&usp=sharing"
+                  className="relative -top-[70px] h-[480px] w-full"
+                  loading="lazy"
+                />
+              </div>
+                )}
                 <p className="mt-2 text-black/70">
                   The tournament will be hosted in Montréal at the Palais des congrès.
                   Dates and detailed venue info will be announced soon.

@@ -1,6 +1,7 @@
 import activitiesHero from "../../assets/activities.jpg"
 import { FadeIn } from "../../components/FadeIn"
 
+
 export default function Activities() {
   return (
     <>
@@ -46,6 +47,10 @@ export default function Activities() {
               to NACIVT — attractions, tours, dining, parks, and other local
               experiences visitors may enjoy while in the city.
             </p>
+
+            
+
+
           </section>
         </FadeIn>
       </main>
