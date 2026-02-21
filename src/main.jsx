@@ -15,28 +15,31 @@ import Location from "./pages/location/location.jsx"
 import Shop from "./pages/shop/shop.jsx"
 import Bracket from "./pages/bracket/bracket.jsx"
 import FAQ from "./pages/faq/faq"
+import Maintenance from "./pages/maintenance/Maintenance.jsx"
 
+// Set to true to show maintenance page
+const MAINTENANCE_MODE = true;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="register" element={<Register />} />
-
-          <Route path="tournament" element={<Tournament />} />
-
-
-          <Route path="festival" element={<Festival />} />
-          <Route path="about" element={<About />} />
-          <Route path="far" element={<FarRedirect />} />
-          <Route path="activities" element={<Activities />} />
-
-          <Route path="shop" element={<Shop />} />
-          <Route path="location" element={<Location />} />
-        </Route>
+        {MAINTENANCE_MODE ? (
+          <Route path="*" element={<Maintenance />} />
+        ) : (
+          <Route path="/" element={<Layout />}>
+            <Route index element={<App />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="register" element={<Register />} />
+            <Route path="tournament" element={<Tournament />} />
+            <Route path="festival" element={<Festival />} />
+            <Route path="about" element={<About />} />
+            <Route path="far" element={<FarRedirect />} />
+            <Route path="activities" element={<Activities />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="location" element={<Location />} />
+          </Route>
+        )}
       </Routes>
     </BrowserRouter>
   </StrictMode>
