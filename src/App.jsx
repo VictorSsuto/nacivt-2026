@@ -87,7 +87,7 @@ function Hero({ isLoaded }) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Montreal • Labour Day Weekend • North American Chinese Invitational
+              Montreal • September 5–7 • North American Chinese Invitational
             </div>
 
             <div
@@ -244,7 +244,7 @@ function IntroBlock() {
               Event Details
             </div>
             <dl className="space-y-6">
-              <Detail label="Dates" value="Labour Day Weekend, 2026" />
+              <Detail label="Dates" value="September 5–7, 2026" />
               <Detail label="Location" value="Palais des Congrès" />
               <Detail label="Format" value="9-Man Volleyball + Night Market" />
               <Detail label="Contact" value="contact@nacivt.com" />
@@ -264,8 +264,8 @@ function CountdownSection() {
   })
 
   useEffect(() => {
-    // Tournament start: Aug 30, 2026 at 00:00 Eastern Time (EDT is -04:00 in late August)
-    const targetDate = new Date("2026-08-30T00:00:00-04:00")
+    // Tournament start: Sep 5, 2026 at 00:00 Eastern Time (EDT is -04:00 in early September)
+    const targetDate = new Date("2026-09-05T00:00:00-04:00")
 
     const updateCountdown = () => {
       const now = new Date()
@@ -310,8 +310,8 @@ function CountdownSection() {
             NACIVT 2026
           </h2>
           <div className="h-px w-16 bg-black/20 mx-auto my-4"></div>
-          <p className="text-sm text-black/60 uppercase tracking-wider">
-            Labour Day Weekend • Aug 30 – Sep 1, 2026
+            <p className="text-sm text-black/60 uppercase tracking-wider">
+            September 5–7, 2026
           </p>
         </div>
       </FadeIn>
