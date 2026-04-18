@@ -179,7 +179,26 @@ export default function About() {
                 <div className="mt-10 grid gap-6 md:grid-cols-2">
                   <div className="rounded-sm border border-black/10 p-6">
                     <h3 className="text-lg font-semibold">Past Champions</h3>
-                    <p className="mt-2 text-black/70">To be announced.</p>
+                    <div className="mt-4 rounded-sm border border-black/10 bg-black/5 p-4">
+                      <div className="grid gap-4 text-sm text-black/80 sm:grid-cols-2">
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-black/50">Year</div>
+                          <div className="mt-1 font-semibold text-black">2025</div>
+                        </div>
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-black/50">Annual</div>
+                          <div className="mt-1">80th</div>
+                        </div>
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-black/50">Location</div>
+                          <div className="mt-1">New York</div>
+                        </div>
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-black/50">Champions</div>
+                          <div className="mt-1">Washington D.C. CYC Juniors</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div className="rounded-sm border border-black/10 p-6">
                     <h3 className="text-lg font-semibold">Notable Players</h3>
