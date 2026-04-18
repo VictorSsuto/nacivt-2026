@@ -18,7 +18,7 @@ import FAQ from "./pages/faq/faq"
 import Maintenance from "./pages/maintenance/Maintenance.jsx"
 
 // Set to true to show maintenance page
-const MAINTENANCE_MODE = false;
+const MAINTENANCE_MODE = true;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
