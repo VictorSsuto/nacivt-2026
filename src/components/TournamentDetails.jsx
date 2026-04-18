@@ -15,8 +15,6 @@ export default function TournamentDetails() {
           <li><strong>Location:</strong> Montreal Chinatown / Palais des Congrès</li>
           <li><strong>Registration:</strong> contact@nacivt.com</li>
         </ul>
-
-        <p className="mt-6 text-base text-black/70">.</p>
       </div>
     </section>
   )

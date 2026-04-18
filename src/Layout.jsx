@@ -8,10 +8,12 @@ export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a]">
+    <div className="min-h-screen flex flex-col bg-white text-[#1a1a1a]">
       <Navbar isLoaded={true} />
       <ScrollToTop />
-      <Outlet />
+      <main className="flex-1">
+        <Outlet />
+      </main>
       <BackToTop />
       <Footer isLoaded={true} hasTopDivider={location.pathname !== '/'} />
     </div>
