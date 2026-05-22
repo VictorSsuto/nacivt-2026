@@ -26,7 +26,7 @@ export default function Festival() {
 								className="text-4xl md:text-5xl font-bold tracking-tight"
 								style={{ fontFamily: "'Libre Baskerville', serif" }}
 							>
-								Festival
+								Night Market
 							</h1>
 						</FadeIn>
 
@@ -42,9 +42,13 @@ export default function Festival() {
 			<main className="mx-auto max-w-6xl px-8 py-20">
 				<FadeIn>
 					<div className="max-w-3xl">
+						<h2 className="page-section-title text-black">
+							Welcome to the night market!
+						</h2>
+						<div className="h-px w-16 bg-black/20 my-6"></div>
 						<p className="text-xl leading-relaxed text-black/70">
 							Festival information is coming soon. Check back for vendors,
-							schedules, and programming details.
+							schedules, food, and programming details.
 						</p>
 					</div>
 				</FadeIn>

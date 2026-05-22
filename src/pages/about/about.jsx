@@ -103,12 +103,6 @@ export default function About() {
                   Partners
                 </a>
                 <a
-                  href="#hall-of-fame"
-                  className="block text-[#c8102e] hover:underline"
-                >
-                  Hall of Fame
-                </a>
-                <a
                   href="#contact"
                   className="block text-[#c8102e] hover:underline"
                 >
@@ -163,50 +157,7 @@ export default function About() {
               </section>
             </FadeIn>
 
-            <FadeIn>
-              <section
-                id="hall-of-fame"
-                className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
-              >
-                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-                  Hall of Fame
-                </h2>
-                <p className="mt-6 text-base text-black/70">
-                  We’re building a Hall of Fame to honor past champions, standout
-                  players, and memorable NACIVT moments.
-                </p>
-
-                <div className="mt-10 grid gap-6 md:grid-cols-2">
-                  <div className="rounded-sm border border-black/10 p-6">
-                    <h3 className="text-lg font-semibold">Past Champions</h3>
-                    <div className="mt-4 rounded-sm border border-black/10 bg-black/5 p-4">
-                      <div className="grid gap-4 text-sm text-black/80 sm:grid-cols-2">
-                        <div>
-                          <div className="text-xs uppercase tracking-wider text-black/50">Year</div>
-                          <div className="mt-1 font-semibold text-black">2025</div>
-                        </div>
-                        <div>
-                          <div className="text-xs uppercase tracking-wider text-black/50">Annual</div>
-                          <div className="mt-1">80th</div>
-                        </div>
-                        <div>
-                          <div className="text-xs uppercase tracking-wider text-black/50">Location</div>
-                          <div className="mt-1">New York</div>
-                        </div>
-                        <div>
-                          <div className="text-xs uppercase tracking-wider text-black/50">Champions</div>
-                          <div className="mt-1">Washington D.C. CYC Juniors</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-sm border border-black/10 p-6">
-                    <h3 className="text-lg font-semibold">Notable Players</h3>
-                    <p className="mt-2 text-black/70">To be announced.</p>
-                  </div>
-                </div>
-              </section>
-            </FadeIn>
+            {/* Hall of Fame section removed per request */}
 
             <FadeIn>
               <section

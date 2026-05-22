@@ -13,7 +13,7 @@ export default function TournamentDetails() {
           <li><strong>Dates:</strong> September 5–7, 2026</li>
           <li><strong>Format:</strong> 9-Man Volleyball (tournament format details coming soon)</li>
           <li><strong>Location:</strong> Montreal Chinatown / Palais des Congrès</li>
-          <li><strong>Registration:</strong> contact@nacivt.com</li>
+          <li><strong>Registration:</strong> MTLRegistration@nacivt.com</li>
         </ul>
       </div>
     </section>

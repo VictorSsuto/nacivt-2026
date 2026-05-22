@@ -14,11 +14,10 @@ import Activities from "./pages/activities/activities.jsx"
 import Location from "./pages/location/location.jsx"
 import Shop from "./pages/shop/shop.jsx"
 import Bracket from "./pages/bracket/bracket.jsx"
-import FAQ from "./pages/faq/faq"
 import Maintenance from "./pages/maintenance/Maintenance.jsx"
 
 // Set to true to show maintenance page
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -29,7 +28,6 @@ createRoot(document.getElementById("root")).render(
         ) : (
           <Route path="/" element={<Layout />}>
             <Route index element={<App />} />
-            <Route path="/faq" element={<FAQ />} />
             <Route path="register" element={<Register />} />
             <Route path="tournament" element={<Tournament />} />
             <Route path="festival" element={<Festival />} />

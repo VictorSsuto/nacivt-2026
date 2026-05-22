@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
 
   const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
-  const MERCHANT_EMAIL = process.env.MERCHANT_EMAIL || "contact@nacivt.com"
+  const MERCHANT_EMAIL = process.env.MERCHANT_EMAIL || "MTLRegistration@nacivt.com"
 
   if (!SENDGRID_API_KEY) {
     // Dev-friendly fallback: simulate a successful send so developers can test locally

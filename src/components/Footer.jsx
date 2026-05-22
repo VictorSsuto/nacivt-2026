@@ -16,10 +16,11 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
           <div className="h-px w-12 bg-[#d4af37]/30" />
 
           <a
-            href="#"
-            aria-label="Instagram (add link later)"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-md
-                       text-white/80 hover:text-[#c8102e]"
+            href="https://www.instagram.com/montrealnacivt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-md text-white/80 hover:text-[#c8102e]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

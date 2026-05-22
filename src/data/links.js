@@ -13,8 +13,6 @@ export const LINKS = {
   far: "/far",
   activities: "/activities",
   location: "/location",
-  
-  contact: "mailto:contact@nacivt.com",
 
-  faq: "/faq",
+  contact: "mailto:MTLRegistration@nacivt.com",
 }

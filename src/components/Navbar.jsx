@@ -74,12 +74,6 @@ export default function Navbar({ isLoaded }) {
               >
                 Activities
               </Link>
-              <Link
-                to={LINKS.faq}
-                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
-              >
-                FAQ
-              </Link>
             </div>
           </div>
         </nav>
@@ -116,7 +110,6 @@ export default function Navbar({ isLoaded }) {
                 <div className="px-3 py-2 text-sm font-medium">About</div>
                 <Link onClick={() => setOpen(false)} to={LINKS.about} className="block px-4 py-2 text-sm hover:bg-gray-50">About</Link>
                 <Link onClick={() => setOpen(false)} to={LINKS.activities} className="block px-4 py-2 text-sm hover:bg-gray-50">Activities</Link>
-                <Link onClick={() => setOpen(false)} to={LINKS.faq} className="block px-4 py-2 text-sm hover:bg-gray-50">FAQ</Link>
               </div>
             </nav>
           </div>

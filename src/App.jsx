@@ -247,7 +247,7 @@ function IntroBlock() {
               <Detail label="Dates" value="September 5–7, 2026" />
               <Detail label="Location" value="Palais des Congrès" />
               <Detail label="Format" value="9-Man Volleyball + Night Market" />
-              <Detail label="Contact" value="contact@nacivt.com" />
+              <Detail label="Contact" value="MTLRegistration@nacivt.com" />
             </dl>
           </div>
         </FadeIn>

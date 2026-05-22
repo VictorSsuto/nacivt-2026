@@ -6,7 +6,7 @@ Quick status
 
 - The repository includes `.env.example` with placeholders for:
   - `SENDGRID_API_KEY` (SendGrid API key with Mail Send permission)
-  - `MERCHANT_EMAIL` (orders@yourdomain.com)
+  - `MERCHANT_EMAIL` (MTLRegistration@nacivt.com)
 
 - For developer convenience, if `SENDGRID_API_KEY` is NOT set, the function will return a simulated `orderId` (HTTP 200) so you can test the client flow without sending real emails.
 
@@ -32,7 +32,7 @@ vercel dev
 
 ```bash
 export SENDGRID_API_KEY="your_sendgrid_api_key"
-export MERCHANT_EMAIL="orders@yourdomain.com"
+export MERCHANT_EMAIL="MTLRegistration@nacivt.com"
 vercel dev
 ```
 
