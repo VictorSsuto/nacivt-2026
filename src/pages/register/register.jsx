@@ -41,7 +41,7 @@ export default function Register() {
         <FadeIn>
           <div className="max-w-3xl">
             <p className="page-body-lead text-black/70">
-              Information on the official registration is shortly coming up stay tuned to our <a href="https://www.instagram.com/montrealnacivt/" target="_blank" rel="noopener noreferrer" className="text-[#c8102e] underline underline-offset-2 hover:text-[#8b0000]">instagram</a> for updates!
+              Information on the official registration is shortly coming up stay tuned to our <a href="https://www.instagram.com/montrealnacivt/" target="_blank" rel="noopener noreferrer" className="text-black/70">instagram</a> for updates!
             </p>
           </div>
         </FadeIn>

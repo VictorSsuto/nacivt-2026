@@ -17,7 +17,7 @@ import Bracket from "./pages/bracket/bracket.jsx"
 import Maintenance from "./pages/maintenance/Maintenance.jsx"
 
 // Set to true to show maintenance page
-const MAINTENANCE_MODE = false;
+const MAINTENANCE_MODE = true;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
