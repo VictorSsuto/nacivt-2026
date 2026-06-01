@@ -159,41 +159,7 @@ export default function About() {
 
             {/* Hall of Fame section removed per request */}
 
-            <FadeIn>
-              <section
-                id="support"
-                className="scroll-mt-28 mt-16 border-t border-black/10 pt-12"
-              >
-                <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
-                  Support Us
-                </h2>
-                <p className="mt-6 text-base text-black/70">
-                  Want to help make NACIVT 2026 amazing? We’ll post opportunities
-                  to volunteer, sponsor, and support the event here.
-                </p>
-
-                <div className="mt-10 grid gap-6 md:grid-cols-3">
-                  <div className="rounded-sm border border-black/10 p-6">
-                    <h3 className="text-lg font-semibold">Volunteer</h3>
-                    <p className="mt-2 text-black/70">
-                      Roles and sign-up will be announced soon.
-                    </p>
-                  </div>
-                  <div className="rounded-sm border border-black/10 p-6">
-                    <h3 className="text-lg font-semibold">Sponsorship</h3>
-                    <p className="mt-2 text-black/70">
-                      Sponsor deck and packages coming soon.
-                    </p>
-                  </div>
-                  <div className="rounded-sm border border-black/10 p-6">
-                    <h3 className="text-lg font-semibold">Donations</h3>
-                    <p className="mt-2 text-black/70">
-                      Donation options will be posted soon.
-                    </p>
-                  </div>
-                </div>
-              </section>
-            </FadeIn>
+            {/* Support Us section removed per request */}
 
             <FadeIn>
               <section
@@ -203,15 +169,12 @@ export default function About() {
                 <h2 className="text-3xl font-bold" style={{ fontFamily: "'Libre Baskerville', serif" }}>
                   Contact Us
                 </h2>
-                <p className="mt-6 text-base text-black/70">
-                  Contact details will be posted soon. For now, please check
-                  back for updates.
-                </p>
+              
 
                 <div className="mt-10 rounded-sm border border-black/10 p-6">
                   <h3 className="text-lg font-semibold">Email</h3>
                   <p className="mt-2 text-black/70">
-                    Coming soon — we’ll publish an official contact email.
+                    Email: <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a>
                   </p>
                 </div>
               </section>
