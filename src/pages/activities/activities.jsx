@@ -1,17 +1,19 @@
 import activitiesHero from "../../assets/activities.jpg"
 import { FadeIn } from "../../components/FadeIn"
+import { Link } from "react-router-dom"
+import { LINKS } from "../../data/links"
 
 const sections = [
   {
     title: "The Classics",
     kicker: "See the city",
     blurb:
-      "First time in Montreal? Start here — the stops every visitor should hit between matches.",
+      "First time in Montreal? Start with the stops every visitor should hit between matches.",
     items: [
       {
         title: "Old Montreal",
         description:
-          "Cobblestone streets, historic architecture, and cafés — a great place to wander before dinner or after matches.",
+          "Cobblestone streets, historic architecture, and cafés. A great place to wander before dinner or after matches.",
         maps: "https://maps.google.com/?q=Old+Montreal+Quebec",
       },
       {
@@ -29,7 +31,7 @@ const sections = [
       {
         title: "Jean-Talon Market",
         description:
-          "One of North America's largest open-air markets — fresh produce, snacks, flowers, and local flavors.",
+          "One of North America's largest open-air markets, with fresh produce, snacks, flowers, and local flavors.",
         maps: "https://maps.google.com/?q=Jean+Talon+Market+Montreal",
       },
     ],
@@ -55,7 +57,7 @@ const sections = [
       {
         title: "Saint-Laurent Boulevard",
         description:
-          "The Main — Montreal's classic corridor for late dinners and weekend energy.",
+          "Known locally as The Main, Montreal's classic corridor for late dinners and weekend energy.",
         maps: "https://maps.google.com/?q=Saint+Laurent+Boulevard+Montreal",
       },
     ],
@@ -69,19 +71,19 @@ const sections = [
       {
         title: "La Banquise",
         description:
-          "The city's most famous poutine — dozens of variations and open late for post-game refuels.",
+          "The city's most famous poutine, with dozens of variations, open late for post-game refuels.",
         maps: "https://maps.google.com/?q=La+Banquise+Montreal",
       },
       {
         title: "Schwartz's Deli",
         description:
-          "Smoked meat sandwiches since 1928 — the line moves fast and it's worth it.",
+          "Smoked meat sandwiches since 1928. The line moves fast and it's worth it.",
         maps: "https://maps.google.com/?q=Schwartz+Deli+Montreal",
       },
       {
         title: "Sammi & Soupe Dumpling",
         description:
-          "Comforting soup dumplings steps from Chinatown — perfect for a casual team meal.",
+          "Comforting soup dumplings steps from Chinatown, perfect for a casual team meal.",
         maps: "https://maps.google.com/?q=Sammi+Soup+Dumpling+Montreal",
       },
     ],
@@ -90,7 +92,7 @@ const sections = [
     title: "Golden Hour",
     kicker: "Rooftops & terraces",
     blurb:
-      "September in Montreal is terrace season — catch the last of the summer weather.",
+      "September in Montreal is terrace season, so catch the last of the summer weather.",
     items: [
       {
         title: "Terrasse Nelligan",
@@ -121,7 +123,7 @@ const sections = [
       {
         title: "BIXI bike rentals",
         description:
-          "Montreal's bike-share system — an easy way to explore neighborhoods and waterfront paths at your own pace.",
+          "Montreal's bike-share system, an easy way to explore neighborhoods and waterfront paths at your own pace.",
         maps: "https://maps.google.com/?q=BIXI+Montreal",
       },
       {
@@ -133,7 +135,7 @@ const sections = [
       {
         title: "Go-karting",
         description:
-          "Fast-paced and competitive — for players who can't turn it off between matches.",
+          "Fast-paced and competitive, for players who can't turn it off between matches.",
         maps: "https://maps.google.com/?q=Go-karting+Montreal",
       },
       {
@@ -145,7 +147,7 @@ const sections = [
       {
         title: "Spa Scandinave",
         description:
-          "Recovery day — thermal baths and massages for sore shoulders and tired legs.",
+          "Recovery day: thermal baths and massages for sore shoulders and tired legs.",
         maps: "https://maps.google.com/?q=Spa+Scandinave+Montreal",
       },
     ],
@@ -212,7 +214,7 @@ export default function Activities() {
 
             <FadeIn variant="up" delay={120}>
               <p className="mt-4 max-w-2xl text-lg text-white/90">
-                Where to eat, wander, and celebrate between matches — a local's
+                Where to eat, wander, and celebrate between matches. A local's
                 guide to Montreal for tournament weekend.
               </p>
             </FadeIn>
@@ -229,7 +231,7 @@ export default function Activities() {
             <div className="h-px w-16 bg-black/20 my-6"></div>
             <p className="text-lg leading-8 text-black/70">
               The Palais des congrès sits at the edge of Chinatown, minutes
-              from Old Montreal and downtown — which means some of the best of
+              from Old Montreal and downtown, which means some of the best of
               the city is walking distance from the courts. Here's where we'd
               send our own visiting family.
             </p>
@@ -282,6 +284,12 @@ export default function Activities() {
                   Montreal, and Chinatown in minutes, and BIXI bikes cover the
                   rest.
                 </p>
+                <Link
+                  to={LINKS.location}
+                  className="mt-4 inline-block text-sm font-medium text-[#1e3a8a] transition-colors hover:text-[#c8102e]"
+                >
+                  See our full Getting Here &amp; Around guide →
+                </Link>
               </div>
 
               <div className="rounded-sm border border-black/10 bg-white p-6 shadow-sm">

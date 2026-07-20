@@ -45,7 +45,7 @@ export default function About() {
         <FadeIn>
           <div className="max-w-3xl">
             <h2 className="text-xl leading-relaxed text-black/70">
-              More than a tournament — a tradition passed down for over 80
+              More than a tournament: a tradition passed down for over 80
               years.
             </h2>
             <p className="mt-3 text-base text-black/60">
@@ -72,7 +72,7 @@ export default function About() {
                 />
               </div>
               <p className="mt-3 text-sm text-black/50">
-                Video highlight — more media will be added closer to the event.
+                Video highlight. More media will be added closer to the event.
               </p>
             </div>
           </section>
@@ -129,11 +129,11 @@ export default function About() {
                   played in Chinatowns across the continent since the 1930s.
                   Every Labour Day weekend, a different city hosts teams from
                   New York, Boston, Toronto, San Francisco, Washington, and
-                  beyond — and in 2026, the 81st edition comes to Montreal.
+                  beyond. In 2026, the 81st edition comes to Montreal.
                 </p>
                 <p className="mt-4 text-base text-black/70">
                   We’re compiling a full timeline of host cities, champions,
-                  and defining moments — check back as the official history
+                  and defining moments. Check back as the official history
                   takes shape.
                 </p>
               </section>

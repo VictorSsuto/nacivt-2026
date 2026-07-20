@@ -242,7 +242,7 @@ function IntroBlock() {
 
             <p className="text-lg leading-relaxed text-black/80">
               In 2026, Montreal hosts the 81st edition at the Palais des
-              congrès, steps from Chinatown — three days of 9-man competition
+              congrès, steps from Chinatown: three days of 9-man competition
               bringing together teams from New York to Toronto to San
               Francisco, and the families and communities behind them.
             </p>

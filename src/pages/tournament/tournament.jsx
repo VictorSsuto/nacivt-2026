@@ -74,7 +74,7 @@ export default function Tournament() {
             </h2>
             <p className="mt-3 text-base text-black/60">
               Game times, bracket progression, and the official 9-man rulebook
-              will all live here — check back as we finalize the details.
+              will all live here. Check back as we finalize the details.
             </p>
           </div>
         </FadeIn>
@@ -205,8 +205,9 @@ export default function Tournament() {
           >
             <h2 className="text-3xl font-bold">Rules</h2>
             <p className="mt-4 text-base text-black/70">
-              The official 9-man rulebook — court dimensions, eligibility, and
-              gameplay — will be published here before the tournament.
+              The official 9-man rulebook, covering court dimensions,
+              eligibility, and gameplay, will be published here before the
+              tournament.
             </p>
           </section>
         </FadeIn>

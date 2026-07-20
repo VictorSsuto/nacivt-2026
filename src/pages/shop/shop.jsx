@@ -31,7 +31,7 @@ const PRODUCTS = [
     price: 35,
     garment: "Gildan Ultra Cotton T-shirt · 100% cotton",
     description:
-      "Inspired from iconic Chinese landmarks in Montreal — the Chinese Garden at the Botanical Garden, the Lions at the Chinatown Main Gate, and more.",
+      "Inspired from iconic Chinese landmarks in Montreal: the Chinese Garden at the Botanical Garden, the Lions at the Chinatown Main Gate, and more.",
     images: [
       { src: chinatownMetroBlue, label: "Metro Blue", swatch: "#2456a4" },
       { src: chinatownCardinalRed, label: "Cardinal Red", swatch: "#8a1e2d" },
@@ -42,7 +42,7 @@ const PRODUCTS = [
     price: 45,
     garment: "Gildan Ultra Cotton Long Sleeve · 100% cotton",
     description:
-      "The Chinatown design on a cozy long-sleeve — featuring the Chinese Garden, the Lions at the Chinatown Main Gate, and more.",
+      "The Chinatown design on a cozy long-sleeve, featuring the Chinese Garden, the Lions at the Chinatown Main Gate, and more.",
     images: [
       { src: chinatownLsGreen, label: "Forest Green", swatch: "#28402b" },
     ],
@@ -52,7 +52,7 @@ const PRODUCTS = [
     price: 35,
     garment: "Gildan Softstyle T-shirt · 100% ring-spun cotton",
     description:
-      "'Welcome to Montreal' — featuring the city's iconic landmarks: the Olympic Stadium, Chinatown, the Notre-Dame Basilica and the Five Roses.",
+      "'Welcome to Montreal', featuring the city's iconic landmarks: the Olympic Stadium, Chinatown, the Notre-Dame Basilica and the Five Roses.",
     images: [
       { src: bienvenueNavy, label: "Navy", swatch: "#1f2a44" },
       { src: bienvenueBlack, label: "Black", swatch: "#1a1a1a" },
@@ -63,7 +63,7 @@ const PRODUCTS = [
     price: 45,
     garment: "Gildan Softstyle Long Sleeve · 100% ring-spun cotton",
     description:
-      "The Bienvenue design on a long-sleeve — Olympic Stadium, Chinatown, the Notre-Dame Basilica and the Five Roses.",
+      "The Bienvenue design on a long-sleeve, with the Olympic Stadium, Chinatown, the Notre-Dame Basilica and the Five Roses.",
     images: [{ src: bienvenueLsNavy, label: "Navy", swatch: "#1f2a44" }],
   },
 ]
@@ -82,7 +82,7 @@ function ProductCard({ product }) {
       <div className="aspect-[4/3] w-full overflow-hidden bg-[#f4f2ee]">
         <img
           src={image.src}
-          alt={`${product.name} — ${image.label}`}
+          alt={`${product.name} in ${image.label}`}
           loading="lazy"
           decoding="async"
           className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.03]"
@@ -167,7 +167,7 @@ export default function Shop() {
 
             <FadeIn variant="up" delay={120}>
               <p className="mt-4 max-w-2xl text-lg text-white/90">
-                Official 81st NACIVT merch — every purchase supports the
+                Official 81st NACIVT merch. Every purchase supports the
                 tournament.
               </p>
             </FadeIn>
@@ -184,7 +184,7 @@ export default function Shop() {
               </h2>
               <div className="h-px w-16 bg-black/20 my-6"></div>
               <p className="page-body-lead text-black/70">
-                All orders are handled through our Zeffy store — 100% of
+                All orders are handled through our Zeffy store, and 100% of
                 proceeds go to the tournament. Pick-up at 1001 Pl.
                 Jean-Paul-Riopelle, Montréal.
               </p>

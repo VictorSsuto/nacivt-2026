@@ -10,7 +10,7 @@ export default function TournamentDetails() {
         <div className="h-px w-16 bg-black/20 mb-6"></div>
 
         <ul className="list-disc pl-6 text-black/80 space-y-2">
-          <li><strong>Dates:</strong> September 5–7, 2026 — Labour Day weekend</li>
+          <li><strong>Dates:</strong> September 5–7, 2026 (Labour Day weekend)</li>
           <li><strong>Format:</strong> 9-man volleyball (full tournament format coming soon)</li>
           <li><strong>Location:</strong> Palais des congrès, at the edge of Montreal's Chinatown</li>
           <li><strong>Questions:</strong> <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a></li>

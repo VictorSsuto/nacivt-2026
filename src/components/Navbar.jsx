@@ -45,6 +45,10 @@ export default function Navbar({ isLoaded }) {
             Shop
           </Link>
 
+          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.location}>
+            Getting Around
+          </Link>
+
           <div className="relative group">
             <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
               About
@@ -93,6 +97,7 @@ export default function Navbar({ isLoaded }) {
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.home}>Home</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.tournament}>Tournament</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.shop}>Shop</Link>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.location}>Getting Around</Link>
               <div className="border-t border-black/5 mt-1 pt-2">
                 <div className="px-3 py-2 text-sm font-medium">About</div>
                 <Link onClick={() => setOpen(false)} to={LINKS.about} className="block px-4 py-2 text-sm hover:bg-gray-50">About</Link>
