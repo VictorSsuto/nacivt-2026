@@ -16,8 +16,7 @@ export default function About() {
         />
 
         {/* Brand overlays */}
-        <div className="absolute inset-0 bg-[#1e3a8a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
@@ -93,19 +92,19 @@ export default function About() {
               <nav className="mt-8 space-y-6 text-sm">
                 <a
                   href="#history"
-                  className="block text-[#c8102e] hover:underline"
+                  className="block text-[#E25E3E] hover:underline"
                 >
                   History
                 </a>
                 <a
                   href="#partners"
-                  className="block text-[#c8102e] hover:underline"
+                  className="block text-[#E25E3E] hover:underline"
                 >
                   Partners
                 </a>
                 <a
                   href="#contact"
-                  className="block text-[#c8102e] hover:underline"
+                  className="block text-[#E25E3E] hover:underline"
                 >
                   Contact Us
                 </a>
@@ -184,7 +183,7 @@ export default function About() {
                   <h3 className="text-lg font-semibold">Email</h3>
                   <p className="mt-2 text-black/70">
                     Reach the organizing committee at{" "}
-                    <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a>.
+                    <a href="mailto:MTLRegistration@nacivt.com" className="text-[#275E6B] underline">MTLRegistration@nacivt.com</a>.
                   </p>
                 </div>
               </section>

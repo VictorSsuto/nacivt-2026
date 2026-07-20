@@ -4,18 +4,18 @@
 
 @theme {
   /* Chinese Traditional Colors */
-  --color-chinese-red: #c8102e;
-  --color-chinese-gold: #d4af37;
-  --color-chinese-crimson: #8b0000;
+  --color-chinese-red: #E25E3E;
+  --color-chinese-gold: #F3EAD3;
+  --color-chinese-crimson: #C14524;
   
   /* Montreal Colors */
-  --color-montreal-blue: #1e3a8a;
-  --color-montreal-navy: #0f172a;
+  --color-montreal-blue: #275E6B;
+  --color-montreal-navy: #17404A;
   
   /* Neutrals */
   --color-ink: #1a1a1a;
   --color-paper: #ffffff;
-  --color-cream: #faf8f3;
+  --color-cream: #F6F0E4;
   --color-muted: #666666;
   --color-rule: #d9d9d9;
   

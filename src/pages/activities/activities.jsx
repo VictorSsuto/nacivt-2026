@@ -176,7 +176,7 @@ function ActivityCard({ item }) {
         href={item.maps}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#1e3a8a] transition-colors hover:text-[#c8102e]"
+        className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
       >
         <MapIcon />
         Open in Google Maps
@@ -198,8 +198,7 @@ export default function Activities() {
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_40%]"
         />
 
-        <div className="absolute inset-0 bg-[#1e3a8a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
@@ -242,7 +241,7 @@ export default function Activities() {
           {sections.map((section) => (
             <FadeIn key={section.title}>
               <section className="border-t border-black/10 pt-12">
-                <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
+                <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">
                   {section.kicker}
                 </div>
                 <h2
@@ -269,7 +268,7 @@ export default function Activities() {
           <section className="mt-20 border-t border-black/10 pt-12">
             <div className="grid gap-10 md:grid-cols-2">
               <div>
-                <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
+                <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">
                   Getting around
                 </div>
                 <h2
@@ -286,7 +285,7 @@ export default function Activities() {
                 </p>
                 <Link
                   to={LINKS.location}
-                  className="mt-4 inline-block text-sm font-medium text-[#1e3a8a] transition-colors hover:text-[#c8102e]"
+                  className="mt-4 inline-block text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
                 >
                   See our full Getting Here &amp; Around guide →
                 </Link>
@@ -305,7 +304,7 @@ export default function Activities() {
                   href="https://www.mtl.org/en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-block border border-[#1e3a8a] px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#1e3a8a] transition-colors hover:bg-[#1e3a8a] hover:text-white"
+                  className="mt-5 inline-block border border-[#275E6B] px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#275E6B] transition-colors hover:bg-[#275E6B] hover:text-white"
                 >
                   Visit Tourisme Montréal
                 </a>

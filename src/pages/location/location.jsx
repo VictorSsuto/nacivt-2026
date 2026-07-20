@@ -57,8 +57,7 @@ export default function Location() {
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
         />
 
-        <div className="absolute inset-0 bg-[#1e3a8a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
@@ -97,7 +96,7 @@ export default function Location() {
               href="https://www.google.com/maps?q=Palais+des+congres+de+Montreal"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-block border border-[#1e3a8a] px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#1e3a8a] transition-colors hover:bg-[#1e3a8a] hover:text-white"
+              className="mt-6 inline-block border border-[#275E6B] px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-[#275E6B] transition-colors hover:bg-[#275E6B] hover:text-white"
             >
               Open in Google Maps
             </a>
@@ -106,7 +105,7 @@ export default function Location() {
 
         <FadeIn>
           <section className="mt-20 border-t border-black/10 pt-12">
-            <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
+            <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">
               From the airport
             </div>
             <h2
@@ -133,14 +132,14 @@ export default function Location() {
                     <h3 className="mt-2 text-xl font-semibold tracking-tight text-black">
                       {option.name}
                     </h3>
-                    <div className="mt-1 text-lg font-bold text-[#1e3a8a]">
+                    <div className="mt-1 text-lg font-bold text-[#275E6B]">
                       {option.price}
                     </div>
 
                     <ul className="mt-4 space-y-3 text-sm leading-6 text-black/70">
                       {option.points.map((point) => (
                         <li key={point} className="flex gap-2">
-                          <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c8102e]" />
+                          <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E25E3E]" />
                           <span>{point}</span>
                         </li>
                       ))}
@@ -151,7 +150,7 @@ export default function Location() {
                     href={option.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-block text-sm font-medium text-[#1e3a8a] transition-colors hover:text-[#c8102e]"
+                    className="mt-6 inline-block text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
                   >
                     {option.linkLabel} →
                   </a>
@@ -170,7 +169,7 @@ export default function Location() {
 
         <FadeIn>
           <section className="mt-20 border-t border-black/10 pt-12">
-            <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
+            <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">
               During the weekend
             </div>
             <h2

@@ -2,7 +2,7 @@ export default function TournamentDetails() {
   return (
     <section id="tournament-details" className="py-12">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">Latest Updates</div>
+        <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">Latest Updates</div>
         <h2 className="text-3xl font-bold tracking-tight text-black mb-4" style={{ fontFamily: "'Libre Baskerville', serif" }}>
           The Essentials
         </h2>
@@ -13,7 +13,7 @@ export default function TournamentDetails() {
           <li><strong>Dates:</strong> September 5–7, 2026 (Labour Day weekend)</li>
           <li><strong>Format:</strong> 9-man volleyball (full tournament format coming soon)</li>
           <li><strong>Location:</strong> Palais des congrès, at the edge of Montreal's Chinatown</li>
-          <li><strong>Questions:</strong> <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a></li>
+          <li><strong>Questions:</strong> <a href="mailto:MTLRegistration@nacivt.com" className="text-[#275E6B] underline">MTLRegistration@nacivt.com</a></li>
         </ul>
       </div>
     </section>

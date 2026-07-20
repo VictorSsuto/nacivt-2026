@@ -94,7 +94,7 @@ function ProductCard({ product }) {
           <h3 className="text-base font-semibold tracking-tight text-black">
             {product.name}
           </h3>
-          <div className="shrink-0 text-base font-bold text-[#1e3a8a]">
+          <div className="shrink-0 text-base font-bold text-[#275E6B]">
             ${product.price}
           </div>
         </div>
@@ -120,7 +120,7 @@ function ProductCard({ product }) {
                 }}
                 className={`h-5 w-5 rounded-full border transition ${
                   i === active
-                    ? "border-[#1e3a8a] ring-2 ring-[#1e3a8a]/30"
+                    ? "border-[#275E6B] ring-2 ring-[#275E6B]/30"
                     : "border-black/20"
                 }`}
                 style={{ backgroundColor: img.swatch }}
@@ -129,7 +129,7 @@ function ProductCard({ product }) {
             <span className="ml-1 text-xs text-black/50">{image.label}</span>
           </div>
 
-          <span className="text-sm font-medium text-[#1e3a8a] group-hover:underline">
+          <span className="text-sm font-medium text-[#275E6B] group-hover:underline">
             Buy on Zeffy →
           </span>
         </div>
@@ -151,8 +151,7 @@ export default function Shop() {
           className="absolute inset-0 h-full w-full object-cover object-[50%_50%] sm:object-[50%_48%]"
         />
 
-        <div className="absolute inset-0 bg-[#1e3a8a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
@@ -205,7 +204,7 @@ export default function Shop() {
                 href={ZEFFY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-sm bg-[#1e3a8a] px-8 py-4 text-lg font-semibold text-white transition hover:opacity-90"
+                className="inline-block rounded-sm bg-[#275E6B] px-8 py-4 text-lg font-semibold text-white transition hover:opacity-90"
               >
                 Shop the full collection on Zeffy →
               </a>

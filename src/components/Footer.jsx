@@ -3,7 +3,7 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
 
   return (
     <footer
-      className={`${topBorderClass} bg-gradient-to-r from-[#071233] to-[#1e3a8a] mt-0 text-white transition-all duration-500 ${
+      className={`${topBorderClass} bg-[#14333C] mt-0 text-white transition-all duration-500 ${
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
@@ -13,14 +13,14 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
             Follow the Action!
           </h2>
 
-          <div className="h-px w-12 bg-[#d4af37]/30" />
+          <div className="h-px w-12 bg-[#F3EAD3]/30" />
 
           <a
             href="https://www.instagram.com/montrealnacivt/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-md text-white/80 hover:text-[#c8102e]"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-md text-white/80 hover:text-[#E25E3E]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

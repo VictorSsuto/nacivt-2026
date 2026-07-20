@@ -42,8 +42,7 @@ export default function Tournament() {
         />
 
         {/* Brand overlays */}
-        <div className="absolute inset-0 bg-[#1e3a8a]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto w-full max-w-6xl px-8 text-white">
@@ -96,8 +95,7 @@ export default function Tournament() {
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
-                <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-black/50" />
                 <div className="relative flex h-full flex-col justify-end p-7 text-white">
                   <div className="text-xs font-medium uppercase tracking-wider text-white/80">
                     Tournament
@@ -126,8 +124,7 @@ export default function Tournament() {
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
-                <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-black/50" />
                 <div className="relative flex h-full flex-col justify-end p-7 text-white">
                   <div className="text-xs font-medium uppercase tracking-wider text-white/80">
                     Tournament
@@ -156,8 +153,7 @@ export default function Tournament() {
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-110 [transform:translateZ(0)]"
                 />
-                <div className="absolute inset-0 bg-[#1e3a8a]/40 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-black/50" />
                 <div className="relative flex h-full flex-col justify-end p-7 text-white">
                   <div className="text-xs font-medium uppercase tracking-wider text-white/80">
                     Tournament

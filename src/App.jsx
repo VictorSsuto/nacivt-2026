@@ -38,7 +38,7 @@ function Home({ isLoaded }) {
         </FadeIn>
       </main>
 
-      <section className="border-t-2 border-black/10 bg-[#faf8f3] py-20">
+      <section className="border-t-2 border-black/10 bg-[#F6F0E4] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <FadeIn variant="up" delay={0}>
             <CountdownSection />
@@ -74,8 +74,7 @@ function Hero({ isLoaded }) {
       />
 
       {/* Newspaper-style overlay */}
-      <div className="absolute inset-0 bg-[#1e3a8a]/80" />
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/45" />
 
       <div className="relative z-10 flex min-h-[60vh] items-center py-16 sm:py-20">
         <div className="mx-auto w-full max-w-5xl px-6">
@@ -91,7 +90,7 @@ function Hero({ isLoaded }) {
             </div>
 
             <div
-              className={`border-l-2 border-[#c8102e] pl-6 mb-8 transition-all duration-700 delay-500 ${
+              className={`border-l-2 border-[#E25E3E] pl-6 mb-8 transition-all duration-700 delay-500 ${
                 isLoaded
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 -translate-x-4"
@@ -111,7 +110,7 @@ function Hero({ isLoaded }) {
                   Montreal
                 </span>
                 <span
-                  className={`block text-[#d4af37] mt-1 transition-all duration-700 delay-700 ${
+                  className={`block text-[#F3EAD3] mt-1 transition-all duration-700 delay-700 ${
                     isLoaded
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-4"
@@ -153,7 +152,7 @@ function Hero({ isLoaded }) {
             >
               <Link
                 to={LINKS.tournament}
-                className="flex-1 min-w-0 text-center border border-[#c8102e] bg-[#c8102e] px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
+                className="flex-1 min-w-0 text-center border border-[#E25E3E] bg-[#E25E3E] px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#C14524] hover:border-[#C14524]"
               >
                 Tournament Info
               </Link>
@@ -198,7 +197,7 @@ function StatsSection() {
           <FadeIn key={idx} variant="up" delay={200 + idx * 120}>
             <div className="bg-white p-8 text-center">
               <div
-                className="text-4xl font-bold text-[#c8102e] mb-3"
+                className="text-4xl font-bold text-[#E25E3E] mb-3"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 {stat.number}
@@ -221,15 +220,15 @@ function IntroBlock() {
         {/* Left: Main article-style content */}
         <FadeIn className="lg:col-span-8" variant="up" delay={0}>
           <div>
-            <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-4">
+            <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-4">
               Tournament Preview
             </div>
             <h2
               className="text-4xl font-bold tracking-tight text-black mb-6"
               style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
-              Volleyball. <span className="text-[#c8102e]">Culture.</span>{" "}
-              <span className="text-[#1e3a8a]">Tradition.</span>
+              Volleyball. <span className="text-[#E25E3E]">Culture.</span>{" "}
+              <span className="text-[#275E6B]">Tradition.</span>
             </h2>
 
             <div className="h-px w-16 bg-black/20 mb-8"></div>
@@ -312,7 +311,7 @@ function CountdownSection() {
     <section className="py-12">
       <FadeIn variant="up" delay={0}>
         <div className="text-center mb-12">
-          <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
+          <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-3">
             Countdown to First Serve
           </div>
           <h2
@@ -333,7 +332,7 @@ function CountdownSection() {
           <FadeIn key={idx} variant="up" delay={150 + idx * 120}>
             <div className="text-center border-r border-black/10 last:border-r-0 pr-6 last:pr-0">
               <div
-                className="text-4xl font-bold text-[#c8102e] mb-2"
+                className="text-4xl font-bold text-[#E25E3E] mb-2"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 {unit.value}

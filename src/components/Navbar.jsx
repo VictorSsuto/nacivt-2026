@@ -17,14 +17,14 @@ export default function Navbar({ isLoaded }) {
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
           }`}
         >
-          <div className="h-10 w-0.5 bg-[#d4af37]" />
+          <div className="h-10 w-0.5 bg-[#E25E3E]" />
 
           <Link
             to={LINKS.home}
-            className="whitespace-nowrap text-base sm:text-lg lg:text-xl font-semibold tracking-wide text-[#1e3a8a]"
+            className="whitespace-nowrap text-base sm:text-lg lg:text-xl font-semibold tracking-wide text-[#275E6B]"
             style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
-            Montreal <span className="text-[#b8860b]">NACIVT</span> 2026
+            Montreal <span className="text-[#E25E3E]">NACIVT</span> 2026
           </Link>
         </div>
         {/* Desktop nav */}
@@ -33,24 +33,24 @@ export default function Navbar({ isLoaded }) {
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.home}>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.home}>
             Home
           </Link>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.tournament}>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.tournament}>
             Tournament
           </Link>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.shop}>
             Shop
           </Link>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.location}>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.location}>
             Getting Around
           </Link>
 
           <div className="relative group">
-            <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.about}>
+            <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.about}>
               About
             </Link>
 
