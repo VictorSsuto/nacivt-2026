@@ -62,7 +62,7 @@ function Hero({ isLoaded }) {
   const navigate = useNavigate()
   const location = useLocation()
   return (
-    <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden">
+    <section className="relative min-h-[60vh] w-full overflow-hidden">
       <img
         src={skyline}
         alt="Montreal skyline"
@@ -77,7 +77,7 @@ function Hero({ isLoaded }) {
       <div className="absolute inset-0 bg-[#1e3a8a]/80" />
       <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 flex h-full items-center">
+      <div className="relative z-10 flex min-h-[60vh] items-center py-16 sm:py-20">
         <div className="mx-auto w-full max-w-5xl px-6">
           <div className="max-w-3xl text-white">
             <div
@@ -98,7 +98,7 @@ function Hero({ isLoaded }) {
               }`}
             >
               <h1
-                className="text-5xl font-bold leading-[1.1] tracking-tight"
+                className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 <span
@@ -192,7 +192,7 @@ function StatsSection() {
   ]
 
   return (
-    <section className="relative -mt-12 z-20 mx-auto max-w-5xl px-6">
+    <section className="relative z-20 mx-auto mt-8 max-w-5xl px-6 md:-mt-12">
       <div className="grid grid-cols-2 gap-px md:grid-cols-4 bg-black/10">
         {stats.map((stat, idx) => (
           <FadeIn key={idx} variant="up" delay={200 + idx * 120}>
