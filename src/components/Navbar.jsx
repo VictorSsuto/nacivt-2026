@@ -37,19 +37,8 @@ export default function Navbar({ isLoaded }) {
             Home
           </Link>
 
-          <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.register}>
-            Register
-          </Link>
-
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.tournament}>
             Tournament
-          </Link>
-
-          <Link
-            className="hover:text-[#c8102e] transition-colors"
-            to={LINKS.festival}
-          >
-            Night Market
           </Link>
 
           <Link className="hover:text-[#c8102e] transition-colors" to={LINKS.shop}>
@@ -102,9 +91,7 @@ export default function Navbar({ isLoaded }) {
           <div className="mt-2 rounded-md border border-black/10 bg-white shadow-sm">
             <nav className="flex flex-col gap-1 p-3 text-sm text-black/80">
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.home}>Home</Link>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.register}>Register</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.tournament}>Tournament</Link>
-              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.festival}>Night Market</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.shop}>Shop</Link>
               <div className="border-t border-black/5 mt-1 pt-2">
                 <div className="px-3 py-2 text-sm font-medium">About</div>

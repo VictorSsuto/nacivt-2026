@@ -45,11 +45,12 @@ export default function About() {
         <FadeIn>
           <div className="max-w-3xl">
             <h2 className="text-xl leading-relaxed text-black/70">
-              Welcome to NACIVT 2026.
+              More than a tournament — a tradition passed down for over 80
+              years.
             </h2>
             <p className="mt-3 text-base text-black/60">
-              This page will be updated as we finalize details about the event,
-              participating teams, and partners.
+              Learn where NACIVT comes from, who makes it possible, and how to
+              get involved in the 81st edition in Montreal.
             </p>
           </div>
         </FadeIn>
@@ -123,9 +124,17 @@ export default function About() {
                   History
                 </h2>
                 <p className="mt-6 text-base text-black/70">
-                  NACIVT has a long tradition in the 9-man volleyball community.
-                  We’ll share a timeline of key years, host cities, and major
-                  moments as we compile the official history.
+                  The North American Chinese Invitational Volleyball Tournament
+                  dates back to 1944, growing out of the 9-man street game
+                  played in Chinatowns across the continent since the 1930s.
+                  Every Labour Day weekend, a different city hosts teams from
+                  New York, Boston, Toronto, San Francisco, Washington, and
+                  beyond — and in 2026, the 81st edition comes to Montreal.
+                </p>
+                <p className="mt-4 text-base text-black/70">
+                  We’re compiling a full timeline of host cities, champions,
+                  and defining moments — check back as the official history
+                  takes shape.
                 </p>
               </section>
             </FadeIn>
@@ -174,7 +183,8 @@ export default function About() {
                 <div className="mt-10 rounded-sm border border-black/10 p-6">
                   <h3 className="text-lg font-semibold">Email</h3>
                   <p className="mt-2 text-black/70">
-                    Email: <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a>
+                    Reach the organizing committee at{" "}
+                    <a href="mailto:MTLRegistration@nacivt.com" className="text-[#1e3a8a] underline">MTLRegistration@nacivt.com</a>.
                   </p>
                 </div>
               </section>

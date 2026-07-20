@@ -1,6 +1,5 @@
 export const LINKS = {
   home: "/",
-  register: "/register",
   shop: "/shop",
   // tournament hub
   tournament: "/tournament",
@@ -8,7 +7,6 @@ export const LINKS = {
   tournamentBracket: "/tournament#bracket",
   tournamentRules: "/tournament#rules",
 
-  festival: "/festival",
   about: "/about",
   far: "/far",
   activities: "/activities",

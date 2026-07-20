@@ -69,11 +69,12 @@ export default function Tournament() {
       <main className="mx-auto max-w-6xl px-8 py-20">
         <FadeIn>
           <div className="max-w-3xl">
-            <p className="text-xl leading-relaxed text-black/70">
-              <h2>Welcome to the tournament hub!</h2>
-            </p>
+            <h2 className="text-xl leading-relaxed text-black/70">
+              Everything you need for game day.
+            </h2>
             <p className="mt-3 text-base text-black/60">
-              Stay tuned for updates as we finalize the details.
+              Game times, bracket progression, and the official 9-man rulebook
+              will all live here — check back as we finalize the details.
             </p>
           </div>
         </FadeIn>
@@ -179,7 +180,8 @@ export default function Tournament() {
           >
             <h2 className="text-3xl font-bold">Schedule</h2>
             <p className="mt-4 text-base text-black/70">
-              Schedule to be posted.
+              Game times and court assignments for all three days will be
+              posted here closer to the tournament.
             </p>
           </section>
         </FadeIn>
@@ -191,7 +193,7 @@ export default function Tournament() {
           >
             <h2 className="text-3xl font-bold">Bracket</h2>
             <p className="mt-4 text-base text-black/70">
-              Bracket to be posted.
+              Live bracket and results will appear here once pool play begins.
             </p>
           </section>
         </FadeIn>
@@ -203,7 +205,8 @@ export default function Tournament() {
           >
             <h2 className="text-3xl font-bold">Rules</h2>
             <p className="mt-4 text-base text-black/70">
-              Rules to be posted.
+              The official 9-man rulebook — court dimensions, eligibility, and
+              gameplay — will be published here before the tournament.
             </p>
           </section>
         </FadeIn>

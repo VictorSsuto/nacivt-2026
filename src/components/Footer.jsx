@@ -37,7 +37,8 @@ export default function Footer({ isLoaded, hasTopDivider = true }) {
       </div>
 
       <div className="text-center text-xs text-white/70 pb-4">
-        © {new Date().getFullYear()} Victor Ssuto. All rights reserved.
+        © {new Date().getFullYear()} MTL NACIVT. All rights reserved. · Built
+        by Victor Ssuto
       </div>
     </footer>
   )

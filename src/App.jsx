@@ -87,7 +87,7 @@ function Hero({ isLoaded }) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Montreal • September 5–7 • North American Chinese Invitational
+              81st Edition • Montréal • September 5–7, 2026
             </div>
 
             <div
@@ -120,6 +120,16 @@ function Hero({ isLoaded }) {
                   NACIVT 2026
                 </span>
               </h1>
+
+              <div
+                className={`mt-4 text-sm tracking-[0.35em] text-white/70 transition-all duration-700 delay-800 ${
+                  isLoaded
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                北美華人排球邀請賽
+              </div>
             </div>
 
             <p
@@ -129,8 +139,9 @@ function Hero({ isLoaded }) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Welcome back to the heart of Montreal's Chinatown for a weekend of
-              elite volleyball, community, and celebration.
+              Nine players a side. Eight decades of tradition. The North
+              American Chinese Invitational Volleyball Tournament returns to
+              Montreal's Chinatown for Labour Day weekend.
             </p>
 
             <div
@@ -141,10 +152,10 @@ function Hero({ isLoaded }) {
               }`}
             >
               <Link
-                to={LINKS.register}
+                to={LINKS.tournament}
                 className="flex-1 min-w-0 text-center border border-[#c8102e] bg-[#c8102e] px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#8b0000] hover:border-[#8b0000]"
               >
-                Register Now
+                Tournament Info
               </Link>
               <button
                 onClick={(e) => {
@@ -224,15 +235,16 @@ function IntroBlock() {
             <div className="h-px w-16 bg-black/20 mb-8"></div>
 
             <p className="text-lg leading-relaxed text-black/80 mb-6">
-              Montreal NACIVT returns to the heart of Chinatown for a weekend that
-              blends elite 9-man volleyball with community, history, and
-              celebration.
+              Since 1944, NACIVT has turned city streets and parking lots into
+              volleyball courts, carrying a game born in North America's
+              Chinatowns from one generation to the next.
             </p>
 
             <p className="text-lg leading-relaxed text-black/80">
-              For generations, NACIVT has brought together teams and families
-              from across North America. In 2026, we continue that tradition
-              with competition, culture, and connection.
+              In 2026, Montreal hosts the 81st edition at the Palais des
+              congrès, steps from Chinatown — three days of 9-man competition
+              bringing together teams from New York to Toronto to San
+              Francisco, and the families and communities behind them.
             </p>
           </div>
         </FadeIn>
@@ -246,7 +258,7 @@ function IntroBlock() {
             <dl className="space-y-6">
               <Detail label="Dates" value="September 5–7, 2026" />
               <Detail label="Location" value="Palais des Congrès" />
-              <Detail label="Format" value="9-Man Volleyball + Night Market" />
+              <Detail label="Format" value="9-Man Volleyball" />
               <Detail label="Contact" value="MTLRegistration@nacivt.com" />
             </dl>
           </div>
@@ -301,13 +313,13 @@ function CountdownSection() {
       <FadeIn variant="up" delay={0}>
         <div className="text-center mb-12">
           <div className="text-xs font-medium uppercase tracking-widest text-[#c8102e] mb-3">
-            Countdown
+            Countdown to First Serve
           </div>
           <h2
             className="text-3xl font-bold tracking-tight text-black mb-2"
             style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
-            NACIVT 2026
+            See You in Montréal
           </h2>
           <div className="h-px w-16 bg-black/20 mx-auto my-4"></div>
             <p className="text-sm text-black/60 uppercase tracking-wider">
