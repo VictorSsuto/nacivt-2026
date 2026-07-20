@@ -17,19 +17,19 @@ export default function Navbar({ isLoaded }) {
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
           }`}
         >
-          <div className="h-10 w-0.5 bg-[#c8102e]" />
+          <div className="h-10 w-0.5 bg-[#d4af37]" />
 
           <Link
             to={LINKS.home}
-            className="text-lg md:text-xl font-semibold tracking-wide text-[#c8102e]"
+            className="whitespace-nowrap text-base sm:text-lg lg:text-xl font-semibold tracking-wide text-[#1e3a8a]"
             style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
-            Montreal <span className="text-[#1e3a8a]">NACIVT</span> 2026
+            Montreal <span className="text-[#b8860b]">NACIVT</span> 2026
           </Link>
         </div>
         {/* Desktop nav */}
         <nav
-          className={`hidden md:flex items-center gap-6 text-sm md:text-sm font-medium normal-case tracking-normal text-black/70 transition-all duration-700 delay-200 ${
+          className={`hidden lg:flex items-center gap-6 text-sm font-medium normal-case tracking-normal text-black/70 transition-all duration-700 delay-200 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
@@ -76,7 +76,7 @@ export default function Navbar({ isLoaded }) {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="ml-4 flex h-10 w-10 items-center justify-center rounded-md border border-black/10 bg-white md:hidden"
+          className="ml-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-black/10 bg-white lg:hidden"
         >
           <span className="sr-only">Menu</span>
           <svg className="h-5 w-5 text-black/70" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -90,7 +90,7 @@ export default function Navbar({ isLoaded }) {
       </div>
 
       {/* Mobile menu panel */}
-      <div className={`md:hidden ${open ? "block" : "hidden"}`}> 
+      <div className={`lg:hidden ${open ? "block" : "hidden"}`}>
         <div className="mx-auto max-w-5xl px-6 pb-4">
           <div className="mt-2 rounded-md border border-black/10 bg-white shadow-sm">
             <nav className="flex flex-col gap-1 p-3 text-sm text-black/80">
