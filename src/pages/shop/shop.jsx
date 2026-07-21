@@ -68,26 +68,30 @@ const PRODUCTS = [
   },
 ]
 
-function ProductCard({ product }) {
+function ProductCard({ product, onZoom }) {
   const [active, setActive] = useState(0)
   const image = product.images[active]
+  const alt = `${product.name} in ${image.label}`
 
   return (
-    <a
-      href={ZEFFY_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-md"
-    >
-      <div className="aspect-[4/3] w-full overflow-hidden bg-[#f4f2ee]">
+    <article className="group overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-md">
+      <button
+        type="button"
+        onClick={() => onZoom({ src: image.src, alt })}
+        aria-label={`Enlarge photo of ${alt}`}
+        className="relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-[#f4f2ee]"
+      >
         <img
           src={image.src}
-          alt={`${product.name} in ${image.label}`}
+          alt={alt}
           loading="lazy"
           decoding="async"
           className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.03]"
         />
-      </div>
+        <span className="absolute bottom-2 right-2 rounded-sm bg-black/55 px-2 py-1 text-xs text-white opacity-0 transition group-hover:opacity-100">
+          Click to enlarge
+        </span>
+      </button>
 
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
@@ -95,7 +99,7 @@ function ProductCard({ product }) {
             {product.name}
           </h3>
           <div className="shrink-0 text-base font-bold text-[#275E6B]">
-            ${product.price}
+            ${product.price} CAD
           </div>
         </div>
 
@@ -113,11 +117,7 @@ function ProductCard({ product }) {
                 type="button"
                 title={img.label}
                 aria-label={`Show ${img.label}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  setActive(i)
-                }}
+                onClick={() => setActive(i)}
                 className={`h-5 w-5 rounded-full border transition ${
                   i === active
                     ? "border-[#275E6B] ring-2 ring-[#275E6B]/30"
@@ -129,16 +129,23 @@ function ProductCard({ product }) {
             <span className="ml-1 text-xs text-black/50">{image.label}</span>
           </div>
 
-          <span className="text-sm font-medium text-[#275E6B] group-hover:underline">
+          <a
+            href={ZEFFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-[#275E6B] hover:underline"
+          >
             Buy on Zeffy →
-          </span>
+          </a>
         </div>
       </div>
-    </a>
+    </article>
   )
 }
 
 export default function Shop() {
+  const [zoomed, setZoomed] = useState(null)
+
   return (
     <>
       <section className="relative h-[40vh] min-h-[320px] w-full overflow-hidden">
@@ -184,16 +191,43 @@ export default function Shop() {
               <div className="h-px w-16 bg-black/20 my-6"></div>
               <p className="page-body-lead text-black/70">
                 All orders are handled through our Zeffy store, and 100% of
-                proceeds go to the tournament. Pick-up at 1001 Pl.
-                Jean-Paul-Riopelle, Montréal.
+                proceeds go to the tournament.
               </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={80}>
+            <div className="mt-8 max-w-3xl rounded-sm border-l-4 border-[#E25E3E] bg-[#F6F0E4] p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-black">
+                Pre-orders and pick-up
+              </h3>
+              <ul className="mt-3 space-y-2 text-sm leading-6 text-black/75">
+                <li>
+                  <strong>Pre-orders close Friday, July 31 at 9:00 p.m.
+                  Eastern Time.</strong>
+                </li>
+                <li>
+                  Pre-orders will be available for pick-up the morning of
+                  Saturday, September 5.
+                </li>
+                <li>
+                  Pick-up is at the <strong>Merchandise Booth inside the
+                  tournament hall</strong> at the Palais des congrès de
+                  Montréal, 1001 Pl. Jean-Paul-Riopelle. Same building as the
+                  games, so you can grab your order on the way to the courts.
+                </li>
+              </ul>
             </div>
           </FadeIn>
 
           <FadeIn delay={100}>
             <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {PRODUCTS.map((product) => (
-                <ProductCard key={product.name} product={product} />
+                <ProductCard
+                  key={product.name}
+                  product={product}
+                  onZoom={setZoomed}
+                />
               ))}
             </div>
           </FadeIn>
@@ -209,12 +243,37 @@ export default function Shop() {
                 Shop the full collection on Zeffy →
               </a>
               <p className="text-sm text-black/50">
-                Opens in a new tab · Sizes XS–XL · $35 tees · $45 long-sleeves
+                Opens in a new tab · Sizes XS–XL · $35 CAD tees · $45 CAD
+                long-sleeves
               </p>
             </div>
           </FadeIn>
         </section>
       </main>
+
+      {zoomed && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={zoomed.alt}
+          onClick={() => setZoomed(null)}
+          className="fixed inset-0 z-[60] flex cursor-zoom-out items-center justify-center bg-black/85 p-4 sm:p-10"
+        >
+          <img
+            src={zoomed.src}
+            alt={zoomed.alt}
+            className="max-h-full max-w-full object-contain"
+          />
+          <button
+            type="button"
+            aria-label="Close enlarged photo"
+            onClick={() => setZoomed(null)}
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-2xl leading-none text-white hover:bg-white/20"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </>
   )
 }
