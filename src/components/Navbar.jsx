@@ -49,26 +49,17 @@ export default function Navbar({ isLoaded }) {
             Getting Around
           </Link>
 
-          <div className="relative group">
-            <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.about}>
-              About
-            </Link>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.activities}>
+            Activities
+          </Link>
 
-            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 absolute right-0 mt-2 w-40 rounded bg-white border border-black/10 shadow-lg py-2">
-              <Link
-                to={LINKS.about}
-                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
-              >
-                About
-              </Link>
-              <Link
-                to={LINKS.activities}
-                className="block px-4 py-2 text-sm text-black/80 hover:bg-gray-50"
-              >
-                Activities
-              </Link>
-            </div>
-          </div>
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.food}>
+            Food Collaborations
+          </Link>
+
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.about}>
+            About
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -98,11 +89,9 @@ export default function Navbar({ isLoaded }) {
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.tournament}>Tournament</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.shop}>Shop</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.location}>Getting Around</Link>
-              <div className="border-t border-black/5 mt-1 pt-2">
-                <div className="px-3 py-2 text-sm font-medium">About</div>
-                <Link onClick={() => setOpen(false)} to={LINKS.about} className="block px-4 py-2 text-sm hover:bg-gray-50">About</Link>
-                <Link onClick={() => setOpen(false)} to={LINKS.activities} className="block px-4 py-2 text-sm hover:bg-gray-50">Activities</Link>
-              </div>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.activities}>Activities</Link>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.food}>Food Collaborations</Link>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.about}>About</Link>
             </nav>
           </div>
         </div>

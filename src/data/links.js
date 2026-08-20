@@ -10,6 +10,7 @@ export const LINKS = {
   about: "/about",
   far: "/far",
   activities: "/activities",
+  food: "/food",
   location: "/location",
 
   contact: "mailto:MTLRegistration@nacivt.com",
