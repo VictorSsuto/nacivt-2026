@@ -34,7 +34,7 @@ const partners = [
       { label: "Valid", value: "September 5–7, 2026" },
       { label: "Promo Code", value: "NACIVT20" },
     ],
-    notice: "Just mention the code when ordering in store.",
+    notice: "Mention the code when ordering in store.",
     maps: "https://maps.google.com/?q=Teashop+Montreal+Chinatown",
     image: teashopLogo,
     imageAlt: "#Teashop logo",
