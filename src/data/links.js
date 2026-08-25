@@ -9,6 +9,7 @@ export const LINKS = {
 
   about: "/about",
   far: "/far",
+  events: "/events",
   activities: "/activities",
   food: "/food",
   location: "/location",

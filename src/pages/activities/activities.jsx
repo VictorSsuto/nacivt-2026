@@ -1,5 +1,4 @@
 import activitiesHero from "../../assets/activities.jpg"
-import jiaFeature from "../../assets/jia-flyer.png"
 import { FadeIn } from "../../components/FadeIn"
 import { Link } from "react-router-dom"
 import { LINKS } from "../../data/links"
@@ -235,98 +234,18 @@ export default function Activities() {
               the city is walking distance from the courts. Here's where we'd
               send our own visiting family.
             </p>
+            <p className="mt-4 text-lg leading-8 text-black/70">
+              Looking for the official tournament weekend events instead?
+              Check out our{" "}
+              <Link
+                to={LINKS.events}
+                className="font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
+              >
+                NACIVT Events
+              </Link>{" "}
+              page.
+            </p>
           </div>
-        </FadeIn>
-
-        <FadeIn>
-          <section className="mt-16 overflow-hidden rounded-sm border border-black/10 shadow-sm">
-            <div className="grid lg:grid-cols-5">
-              <div className="flex items-center justify-center bg-white p-4 lg:col-span-2">
-                <img
-                  src={jiaFeature}
-                  alt={
-                    'JIA Foundation flyer: Invitation to Athletes attending the 81st NACIVT, a mini-tour of Montreal\'s Chinatown and the "Wing Noodles: The Heart of Chinatown" exhibit'
-                  }
-                  loading="lazy"
-                  className="h-auto w-full max-w-xs object-contain"
-                />
-              </div>
-
-              <div className="bg-white p-8 sm:p-10 lg:col-span-3">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-[#E25E3E] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
-                    Featured
-                  </span>
-                  <span className="text-xs font-medium uppercase tracking-widest text-black/50">
-                    Hosted by the JIA Foundation
-                  </span>
-                </div>
-
-                <h2
-                  className="text-2xl sm:text-3xl font-bold tracking-tight text-black"
-                  style={{ fontFamily: "'Libre Baskerville', serif" }}
-                >
-                  Chinatown Mini-Tour &amp; the "Wing Noodles" Exhibit
-                </h2>
-
-                <p className="mt-4 text-base leading-7 text-black/70">
-                  Athletes, families, and friends are invited to a mini-tour
-                  of Montreal's Chinatown and the exhibit{" "}
-                  <em>"Wing Noodles: The Heart of Chinatown."</em> More than a
-                  food factory, the exhibit tells the story of Wing Noodles as
-                  a community hub, a place where newcomers and refugees found
-                  support, families and employees felt at home, and a deep
-                  sense of social responsibility helped build and sustain
-                  Chinatown for over a decade.
-                </p>
-
-                <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  <div>
-                    <dt className="text-xs font-medium uppercase tracking-wider text-black/60 mb-1">
-                      Date
-                    </dt>
-                    <dd className="text-sm font-semibold text-black/90">
-                      Friday, September 4, 2026
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-xs font-medium uppercase tracking-wider text-black/60 mb-1">
-                      Tour Times
-                    </dt>
-                    <dd className="text-sm font-semibold text-black/90">
-                      10am · 12pm · 2pm · 4pm
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-xs font-medium uppercase tracking-wider text-black/60 mb-1">
-                      Location
-                    </dt>
-                    <dd className="text-sm font-semibold text-black/90">
-                      Maison patrimoniale Yep-Riopel
-                      <br />
-                      116 rue de la Gauchetière
-                    </dd>
-                  </div>
-                </dl>
-
-                <p className="mt-4 text-sm text-black/60">
-                  Beside the Palais des congrès, site of the 81st NACIVT. The
-                  exhibit remains open all weekend, while the Chinatown tour
-                  takes place only on Friday, September 4.
-                </p>
-
-                <a
-                  href="https://maps.google.com/?q=116+rue+de+la+Gauchetiere+O+Montreal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
-                >
-                  <MapIcon />
-                  Get directions
-                </a>
-              </div>
-            </div>
-          </section>
         </FadeIn>
 
         <div className="mt-20 space-y-20">

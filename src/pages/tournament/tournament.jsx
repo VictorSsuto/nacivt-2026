@@ -7,6 +7,60 @@ import { useCallback, useState } from "react"
 
 const RULES_PDF = "/nacivt-rules-2023.pdf"
 
+const scheduleDays = [
+  {
+    weekday: "Friday",
+    date: "September 4th, 2026",
+    venue: "Le Centre Sheraton Montréal Hotel",
+    items: [
+      { time: "2:00 pm – 5:00 pm", event: "NACIVT Montreal Pre 2000 OG Reunion" },
+      { time: "3:00 pm – 9:00 pm", event: "Team Check In" },
+      { time: "6:00 pm – 8:00 pm", event: "Captains' Meeting" },
+    ],
+  },
+  {
+    weekday: "Saturday",
+    date: "September 5th, 2026",
+    items: [
+      { time: "7:00 am – 1:00 pm", event: "AM Wave Pool Play" },
+      { time: "1:00 pm – 1:30 pm", event: "Opening Ceremony" },
+      { time: "1:30 pm – 7:30 pm", event: "PM Wave Pool Play" },
+      { time: "6:00 pm – 10:00 pm", event: "Night Market @ 1111 Boul. St. Laurent" },
+      {
+        time: "10:00 pm – 3:00 am",
+        event: "Tournament Party @ Pangea, Old Montreal, 104 Rue St. Paul East",
+      },
+    ],
+  },
+  {
+    weekday: "Sunday",
+    date: "September 6th, 2026",
+    items: [
+      { time: "7:00 am – 1:00 pm", event: "AM Wave Pool Play" },
+      { time: "1:00 pm – 7:00 pm", event: "PM Wave Pool Play" },
+      { time: "TBD", event: "Potential Challenge & Double Elimination Matches" },
+    ],
+  },
+  {
+    weekday: "Monday",
+    date: "September 7th, 2026",
+    items: [
+      { time: "7:00 am – 6:00 pm", event: "Playoffs" },
+      { time: "TBD", event: "Awards Ceremony" },
+    ],
+  },
+]
+
+function CalendarIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="2">
+      <rect x="3" y="4.5" width="18" height="16" rx="2" />
+      <path strokeLinecap="round" d="M3 9.5h18M8 3v3M16 3v3" />
+      <rect x="7" y="12.5" width="3" height="3" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
 const keyRules = [
   {
     ref: "M2.1",
@@ -211,10 +265,57 @@ export default function Tournament() {
             className="scroll-mt-28 mt-24 border-t border-black/10 pt-16"
           >
             <h2 className="text-3xl font-bold">Schedule</h2>
-            <p className="mt-4 text-base text-black/70">
-              Game times and court assignments for all three days will be
-              posted here closer to the tournament.
+            <p className="mt-4 max-w-3xl text-base text-black/70">
+              Check-in, opening ceremony, pool play, playoffs, and everything
+              in between over the NACIVT weekend.
             </p>
+
+            <div className="mt-8 space-y-6">
+              {scheduleDays.map((day) => (
+                <div
+                  key={day.weekday}
+                  className="rounded-sm border border-black/10 bg-white p-6 shadow-sm sm:p-8"
+                >
+                  <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+                    <div className="flex items-center gap-4 sm:w-52 sm:flex-shrink-0">
+                      <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#275E6B] text-white">
+                        <CalendarIcon />
+                      </div>
+                      <div>
+                        <div
+                          className="text-lg font-bold text-black"
+                          style={{ fontFamily: "'Libre Baskerville', serif" }}
+                        >
+                          {day.weekday}
+                        </div>
+                        <div className="text-sm text-black/60">{day.date}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex-1 sm:border-l sm:border-black/10 sm:pl-8">
+                      {day.venue && (
+                        <div className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#275E6B]">
+                          {day.venue}
+                        </div>
+                      )}
+                      <div className="space-y-3">
+                        {day.items.map((item) => (
+                          <div
+                            key={item.time + item.event}
+                            className="flex flex-col gap-1 sm:flex-row sm:gap-6"
+                          >
+                            <div className="text-sm font-medium text-black/60 sm:w-40 sm:flex-shrink-0">
+                              {item.time}
+                            </div>
+                            <div className="text-sm text-black/90">{item.event}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
         </FadeIn>
 
