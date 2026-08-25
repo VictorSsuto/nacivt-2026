@@ -62,12 +62,12 @@ function WeekendEventCard({ event }) {
           src={event.image}
           alt={event.imageAlt}
           loading="lazy"
-          className="h-auto w-full object-contain"
+          className="h-auto w-full max-h-48 object-contain"
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <div className="flex flex-wrap items-center gap-3 mb-4">
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-wrap items-center gap-3 mb-3">
           <span className="bg-[#E25E3E] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
             {event.badge}
           </span>
@@ -77,7 +77,7 @@ function WeekendEventCard({ event }) {
         </div>
 
         <h3
-          className="text-xl sm:text-2xl font-bold tracking-tight text-black"
+          className="text-xl font-bold tracking-tight text-black"
           style={{ fontFamily: "'Libre Baskerville', serif" }}
         >
           {event.title}
@@ -87,7 +87,7 @@ function WeekendEventCard({ event }) {
           {event.description}
         </p>
 
-        <dl className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <dl className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
           {event.details.map((detail) => (
             <div key={detail.label}>
               <dt className="text-xs font-medium uppercase tracking-wider text-black/60 mb-1">
@@ -101,7 +101,7 @@ function WeekendEventCard({ event }) {
         </dl>
 
         {event.notice && (
-          <p className="mt-5 text-sm leading-6 text-black/70">
+          <p className="mt-4 text-sm leading-6 text-black/70">
             {event.notice}
           </p>
         )}
@@ -118,7 +118,7 @@ function WeekendEventCard({ event }) {
           href={event.cta.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
+          className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
         >
           {event.cta.label}
         </a>
