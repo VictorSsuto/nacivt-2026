@@ -45,6 +45,10 @@ export default function Navbar({ isLoaded }) {
             Shop
           </Link>
 
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.spectatorPasses}>
+            Spectator Passes
+          </Link>
+
           <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.events}>
             NACIVT Events
           </Link>
@@ -107,6 +111,7 @@ export default function Navbar({ isLoaded }) {
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.home}>Home</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.tournament}>Tournament</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.shop}>Shop</Link>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.spectatorPasses}>Spectator Passes</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.events}>NACIVT Events</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.food}>Food Collaborations</Link>
               <div className="border-t border-black/5 mt-1 pt-2">

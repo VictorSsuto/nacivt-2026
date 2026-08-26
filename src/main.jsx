@@ -13,6 +13,7 @@ import Events from "./pages/events/events.jsx"
 import Food from "./pages/food/food.jsx"
 import Location from "./pages/location/location.jsx"
 import Shop from "./pages/shop/shop.jsx"
+import SpectatorPasses from "./pages/spectator-passes/spectator-passes.jsx"
 import Bracket from "./pages/bracket/bracket.jsx"
 import Maintenance from "./pages/maintenance/Maintenance.jsx"
 
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="activities" element={<Activities />} />
             <Route path="food" element={<Food />} />
             <Route path="shop" element={<Shop />} />
+            <Route path="spectator-passes" element={<SpectatorPasses />} />
             <Route path="location" element={<Location />} />
           </Route>
         )}

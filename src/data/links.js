@@ -1,6 +1,7 @@
 export const LINKS = {
   home: "/",
   shop: "/shop",
+  spectatorPasses: "/spectator-passes",
   // tournament hub
   tournament: "/tournament",
   tournamentSchedule: "/tournament#schedule",
