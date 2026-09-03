@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import { LINKS } from "../data/links"
+
 export default function TournamentDetails() {
   return (
     <section id="tournament-details" className="py-12">
@@ -11,7 +14,12 @@ export default function TournamentDetails() {
 
         <ul className="list-disc pl-6 text-black/80 space-y-2">
           <li><strong>Dates:</strong> September 5–7, 2026 (Labour Day weekend)</li>
-          <li><strong>Format:</strong> 9-man volleyball (full tournament format coming soon)</li>
+          <li>
+            <strong>Format:</strong> 9-man volleyball —{" "}
+            <Link to={LINKS.tournamentBracket} className="text-[#275E6B] underline">
+              view pool assignments and court schedules
+            </Link>
+          </li>
           <li><strong>Location:</strong> Palais des congrès, at the edge of Montreal's Chinatown</li>
           <li><strong>Questions:</strong> <a href="mailto:MTLRegistration@nacivt.com" className="text-[#275E6B] underline">MTLRegistration@nacivt.com</a></li>
         </ul>

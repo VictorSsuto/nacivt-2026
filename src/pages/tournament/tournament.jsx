@@ -3,7 +3,9 @@ import bracketImg from "../../assets/bracket.jpg"
 import ruleImg from "../../assets/rule.jpg"
 import tournamentHero from "../../assets/tournament-hero.jpg"
 import { FadeIn } from "../../components/FadeIn"
-import { useCallback, useState } from "react"
+import { poolPlaySchedule, parseMatchCode } from "../../data/poolPlaySchedule"
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { useLocation } from "react-router-dom"
 
 const RULES_PDF = "/nacivt-rules-2023.pdf"
 
@@ -94,8 +96,32 @@ const keyRules = [
   },
 ]
 
+const POOL_SCHEDULE_SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/1TLhL6qp7um5S-9S4DuVnlwmChBnENrPrMaGW0yWBmR4/edit?gid=1168560893#gid=1168560893"
+
 export default function Tournament() {
   const [showPreview, setShowPreview] = useState(false)
+  const [activeWave, setActiveWave] = useState("morning")
+  const [teamSearch, setTeamSearch] = useState("")
+  const wave = poolPlaySchedule[activeWave]
+  const courtNumbers = useMemo(
+    () => Object.keys(wave.courts).map(Number).sort((a, b) => a - b),
+    [wave],
+  )
+
+  const matchedKeys = useMemo(() => {
+    const term = teamSearch.trim().toLowerCase()
+    const keys = new Set()
+    if (!term) return keys
+    for (const pool of wave.pools) {
+      pool.teams.forEach((team, i) => {
+        if (team.toLowerCase().includes(term)) {
+          keys.add(`${pool.id}${i + 1}`)
+        }
+      })
+    }
+    return keys
+  }, [wave, teamSearch])
   const handleCardClick = useCallback((e, id) => {
     e.preventDefault()
     const link = e.currentTarget
@@ -117,6 +143,27 @@ export default function Tournament() {
       window.location.hash = id
     }
   }, [])
+
+  const location = useLocation()
+  useEffect(() => {
+    const id = location.hash?.slice(1)
+    if (!id) return
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(id)
+      if (!target) return
+      const header = document.querySelector("header.sticky")
+      const headerHeight = header ? header.getBoundingClientRect().height : 0
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8
+      window.scrollTo({ top, behavior: "smooth" })
+    }
+
+    // Wait a frame for layout (tables, images, fonts) to settle before
+    // measuring, then re-settle once web fonts finish swapping in.
+    const raf = requestAnimationFrame(() => requestAnimationFrame(scrollToTarget))
+    document.fonts?.ready?.then(scrollToTarget)
+    return () => cancelAnimationFrame(raf)
+  }, [location.hash])
 
   return (
     <>
@@ -325,8 +372,206 @@ export default function Tournament() {
             className="scroll-mt-28 mt-20 border-t border-black/10 pt-16"
           >
             <h2 className="text-3xl font-bold">Bracket</h2>
-            <p className="mt-4 text-base text-black/70">
-              Live bracket and results will appear here once pool play begins.
+            <p className="mt-4 max-w-3xl text-base text-black/70">
+              Pool assignments and court schedules for the morning and
+              afternoon waves. Live bracket and results will appear here once
+              pool play concludes.
+            </p>
+
+            {/* Controls: wave toggle, team search, source link */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="inline-flex rounded-sm border border-black/10 bg-white p-1 shadow-sm">
+                {Object.entries(poolPlaySchedule).map(([key, w]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setActiveWave(key)}
+                    className={`px-5 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
+                      activeWave === key
+                        ? "bg-[#275E6B] text-white"
+                        : "text-black/60 hover:text-black"
+                    }`}
+                  >
+                    {w.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="relative flex-1 min-w-[220px] max-w-sm">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 fill-none stroke-black/40"
+                  strokeWidth="2"
+                >
+                  <circle cx="11" cy="11" r="7" />
+                  <path strokeLinecap="round" d="M21 21l-4.3-4.3" />
+                </svg>
+                <input
+                  type="text"
+                  value={teamSearch}
+                  onChange={(e) => setTeamSearch(e.target.value)}
+                  placeholder="Find your team…"
+                  className="w-full border border-black/10 bg-white py-2 pl-9 pr-9 text-sm text-black placeholder:text-black/40 focus:border-[#275E6B] focus:outline-none"
+                />
+                {teamSearch && (
+                  <button
+                    type="button"
+                    onClick={() => setTeamSearch("")}
+                    aria-label="Clear search"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-black/40 hover:text-black"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+
+              <a
+                href={POOL_SCHEDULE_SHEET_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-[#275E6B] underline decoration-black/20 underline-offset-4 hover:decoration-[#275E6B]"
+              >
+                View full spreadsheet ↗
+              </a>
+            </div>
+
+            {teamSearch && (
+              <p className="mt-3 text-sm text-black/50">
+                {matchedKeys.size > 0
+                  ? `Highlighting ${matchedKeys.size} match${matchedKeys.size === 1 ? "" : "es"} for "${teamSearch}" in the ${wave.label.toLowerCase()}.`
+                  : `No teams in the ${wave.label.toLowerCase()} match "${teamSearch}".`}
+              </p>
+            )}
+
+            {/* Pool assignments */}
+            <div className="mt-10 flex items-baseline justify-between gap-4">
+              <h3 className="text-xl font-bold">Pool Assignments</h3>
+              <span className="text-sm text-black/50">{wave.timeRange}</span>
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-sm border border-black/10 bg-white shadow-sm">
+              <table className="w-full border-collapse text-left">
+                <thead>
+                  <tr className="bg-[#275E6B] text-white">
+                    <th className="sticky left-0 z-10 whitespace-nowrap bg-[#275E6B] px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                      Team
+                    </th>
+                    {wave.pools.map((pool) => (
+                      <th
+                        key={pool.id}
+                        className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase tracking-wider"
+                      >
+                        Pool {pool.id}
+                        <div className="mt-0.5 text-[10px] font-normal normal-case tracking-normal text-white/70">
+                          Court {pool.court}
+                        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[0, 1, 2, 3].map((i) => (
+                    <tr
+                      key={i}
+                      className="border-t border-black/10 even:bg-black/[0.02]"
+                    >
+                      <td className="sticky left-0 z-10 whitespace-nowrap bg-white px-4 py-3 text-sm font-medium text-black/70">
+                        Team {i + 1}
+                      </td>
+                      {wave.pools.map((pool) => {
+                        const isMatch = matchedKeys.has(`${pool.id}${i + 1}`)
+                        return (
+                          <td
+                            key={pool.id}
+                            className={`whitespace-nowrap border-l border-black/5 px-4 py-3 text-sm transition-colors ${
+                              isMatch
+                                ? "bg-[#F7D774]/60 font-semibold text-black"
+                                : "text-black/80"
+                            }`}
+                          >
+                            {pool.teams[i]}
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Court schedule */}
+            <div className="mt-12 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+              <h3 className="text-xl font-bold">Court Schedule</h3>
+              {wave.ceremony && (
+                <span className="text-sm font-semibold uppercase tracking-wide text-[#E25E3E]">
+                  {wave.ceremony}
+                </span>
+              )}
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-sm border border-black/10 bg-white shadow-sm">
+              <table className="w-full border-collapse text-left">
+                <thead>
+                  <tr className="bg-[#275E6B] text-white">
+                    <th className="sticky left-0 z-10 whitespace-nowrap bg-[#275E6B] px-4 py-3 text-xs font-semibold uppercase tracking-wider">
+                      Time
+                    </th>
+                    {courtNumbers.map((court) => (
+                      <th
+                        key={court}
+                        className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase tracking-wider"
+                      >
+                        Court {court}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {wave.times.map((time, ti) => (
+                    <tr
+                      key={time}
+                      className="border-t border-black/10 even:bg-black/[0.02]"
+                    >
+                      <td className="sticky left-0 z-10 whitespace-nowrap bg-white px-4 py-3 text-sm font-medium text-black/70">
+                        {time}
+                      </td>
+                      {courtNumbers.map((court) => {
+                        const code = wave.courts[court][ti]
+                        const parsed = parseMatchCode(code)
+                        const isMatch =
+                          parsed &&
+                          (matchedKeys.has(parsed.a) || matchedKeys.has(parsed.b))
+                        return (
+                          <td
+                            key={court}
+                            className={`whitespace-nowrap border-l border-black/5 px-4 py-3 text-sm transition-colors ${
+                              isMatch ? "bg-[#F7D774]/60" : ""
+                            }`}
+                          >
+                            {parsed ? (
+                              <>
+                                <div className="font-medium text-black">
+                                  {parsed.a}
+                                  <span className="text-black/30"> v </span>
+                                  {parsed.b}
+                                </div>
+                                <div className="text-xs uppercase tracking-wide text-black/40">
+                                  ref {parsed.ref}
+                                </div>
+                              </>
+                            ) : (
+                              code
+                            )}
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-xs text-black/50">
+              Match codes read as team v team, refereed by the noted team
+              (e.g. A1 v A4, ref B4).
             </p>
           </section>
         </FadeIn>
