@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { LINKS } from "./data/links"
+import { partners } from "./data/partners"
 import skyline from "./assets/montreal-skyline.jpg"
 import { Link, useNavigate, useLocation } from "react-router-dom"
 import "./App.css"
@@ -54,7 +55,67 @@ function Home({ isLoaded }) {
           </FadeIn>
         </div>
       </section>
+
+      {/* Partners */}
+      <section className="border-t-2 border-black/10 bg-[#F6F0E4] py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <FadeIn variant="up" delay={0}>
+            <PartnersSection />
+          </FadeIn>
+        </div>
+      </section>
     </>
+  )
+}
+
+function PartnersSection() {
+  return (
+    <div>
+      <div className="text-xs font-medium uppercase tracking-widest text-[#E25E3E] mb-4">
+        Partners
+      </div>
+      <h2
+        className="text-3xl font-bold tracking-tight text-black mb-4"
+        style={{ fontFamily: "'Libre Baskerville', serif" }}
+      >
+        Backed by Chinatown &amp; Beyond
+      </h2>
+      <p className="max-w-2xl text-base leading-relaxed text-black/70 mb-4">
+        NACIVT 2026 is made possible by Chinatown restaurants, venues, and
+        organizations making tournament weekend better for players and
+        families.
+      </p>
+      <p className="max-w-2xl text-base leading-relaxed text-black/70 mb-10">
+        We're excited to welcome our newest partners,{" "}
+        <span className="font-semibold text-black">Multiverse Card Show</span>{" "}
+        and <span className="font-semibold text-black">Slunks</span>, to the
+        NACIVT 2026 family.
+      </p>
+
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:grid-cols-7">
+        {partners.map((partner) => (
+          <div
+            key={partner.name}
+            className="flex h-20 items-center justify-center bg-white p-3 shadow-sm grayscale transition-all duration-300 hover:grayscale-0"
+            title={partner.name}
+          >
+            <img
+              src={partner.image}
+              alt={`${partner.name} logo`}
+              loading="lazy"
+              className="h-full w-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
+
+      <Link
+        to={LINKS.about + "#partners"}
+        className="mt-8 inline-block border border-[#275E6B] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[#275E6B] transition-colors hover:bg-[#275E6B] hover:text-white"
+      >
+        Meet All Our Partners
+      </Link>
+    </div>
   )
 }
 

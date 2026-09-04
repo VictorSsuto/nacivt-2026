@@ -11,9 +11,9 @@ export default function Navbar({ isLoaded }) {
         isLoaded ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="relative mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:py-5">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:py-5">
         <div
-          className={`flex items-center gap-3 transition-all duration-700 delay-100 ${
+          className={`flex flex-shrink-0 items-center gap-3 transition-all duration-700 delay-100 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
           }`}
         >
@@ -29,7 +29,7 @@ export default function Navbar({ isLoaded }) {
         </div>
         {/* Desktop nav */}
         <nav
-          className={`hidden lg:flex items-center gap-6 text-sm font-medium normal-case tracking-normal text-black/70 transition-all duration-700 delay-200 ${
+          className={`hidden lg:flex items-center gap-5 whitespace-nowrap text-sm font-medium normal-case tracking-normal text-black/70 transition-all duration-700 delay-200 ${
             isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
           }`}
         >
@@ -39,6 +39,10 @@ export default function Navbar({ isLoaded }) {
 
           <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.tournament}>
             Tournament
+          </Link>
+
+          <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.booklet}>
+            Booklet
           </Link>
 
           <Link className="hover:text-[#E25E3E] transition-colors" to={LINKS.shop}>
@@ -110,6 +114,7 @@ export default function Navbar({ isLoaded }) {
             <nav className="flex flex-col gap-1 p-3 text-sm text-black/80">
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.home}>Home</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.tournament}>Tournament</Link>
+              <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.booklet}>Tournament Booklet</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.shop}>Shop</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.spectatorPasses}>Spectator Passes</Link>
               <Link onClick={() => setOpen(false)} className="block px-3 py-2 hover:bg-gray-50" to={LINKS.events}>NACIVT Events</Link>
@@ -119,6 +124,7 @@ export default function Navbar({ isLoaded }) {
                 <Link onClick={() => setOpen(false)} to={LINKS.about} className="block px-4 py-2 text-sm hover:bg-gray-50">About</Link>
                 <Link onClick={() => setOpen(false)} to={LINKS.location} className="block px-4 py-2 text-sm hover:bg-gray-50">Getting Around</Link>
                 <Link onClick={() => setOpen(false)} to={LINKS.activities} className="block px-4 py-2 text-sm hover:bg-gray-50">Activities</Link>
+                <Link onClick={() => setOpen(false)} to={LINKS.booklet} className="block px-4 py-2 text-sm hover:bg-gray-50">Tournament Booklet</Link>
               </div>
             </nav>
           </div>

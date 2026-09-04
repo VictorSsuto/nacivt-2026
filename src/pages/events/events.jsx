@@ -179,7 +179,14 @@ export default function Events() {
               >
                 Activities guide
               </Link>
-              .
+              . Hungry between matches? See our{" "}
+              <Link
+                to={LINKS.food}
+                className="font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
+              >
+                Food Collaborations
+              </Link>{" "}
+              for deals at local Chinatown restaurants.
             </p>
           </div>
         </FadeIn>

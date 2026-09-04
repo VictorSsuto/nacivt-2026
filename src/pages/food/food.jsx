@@ -3,6 +3,8 @@ import dobeAndyFlyer from "../../assets/dobe-andy-flyer.jpg"
 import teashopLogo from "../../assets/teashop-logo.png"
 import { FadeIn } from "../../components/FadeIn"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { LINKS } from "../../data/links"
 
 const partners = [
   {
@@ -215,6 +217,16 @@ export default function Food() {
               We've teamed up with local Chinatown spots so visiting teams,
               families, and friends get a warm welcome and a good deal.
               Mention NACIVT or show your wristband to redeem.
+            </p>
+            <p className="mt-3 text-lg leading-8 text-black/70">
+              Looking for more to do off the court? Check out our{" "}
+              <Link
+                to={LINKS.events}
+                className="font-medium text-[#275E6B] transition-colors hover:text-[#E25E3E]"
+              >
+                NACIVT Events
+              </Link>{" "}
+              for the Night Market, the official afterparty, and more.
             </p>
           </div>
         </FadeIn>

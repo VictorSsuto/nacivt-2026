@@ -7,6 +7,7 @@ import Layout from "./Layout"
 import App from "./App.jsx"
 import Tournament from "./pages/tournament/tournament.jsx"
 import About from "./pages/about/about.jsx"
+import Booklet from "./pages/booklet/booklet.jsx"
 import FarRedirect from "./pages/far.jsx"
 import Activities from "./pages/activities/activities.jsx"
 import Events from "./pages/events/events.jsx"
@@ -31,6 +32,7 @@ createRoot(document.getElementById("root")).render(
             <Route index element={<App />} />
             <Route path="tournament" element={<Tournament />} />
             <Route path="about" element={<About />} />
+            <Route path="booklet" element={<Booklet />} />
             <Route path="far" element={<FarRedirect />} />
             <Route path="events" element={<Events />} />
             <Route path="activities" element={<Activities />} />

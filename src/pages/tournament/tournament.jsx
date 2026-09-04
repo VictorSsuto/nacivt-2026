@@ -4,6 +4,7 @@ import ruleImg from "../../assets/rule.jpg"
 import tournamentHero from "../../assets/tournament-hero.jpg"
 import { FadeIn } from "../../components/FadeIn"
 import { poolPlaySchedule, parseMatchCode } from "../../data/poolPlaySchedule"
+import { womensPoolPlaySchedule } from "../../data/womensPoolPlaySchedule"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useLocation } from "react-router-dom"
 
@@ -96,14 +97,28 @@ const keyRules = [
   },
 ]
 
-const POOL_SCHEDULE_SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1TLhL6qp7um5S-9S4DuVnlwmChBnENrPrMaGW0yWBmR4/edit?gid=1168560893#gid=1168560893"
+const divisionSchedules = {
+  mens: {
+    label: "Men's",
+    schedule: poolPlaySchedule,
+    sheetUrl:
+      "https://docs.google.com/spreadsheets/d/1TLhL6qp7um5S-9S4DuVnlwmChBnENrPrMaGW0yWBmR4/edit?gid=1168560893#gid=1168560893",
+  },
+  womens: {
+    label: "Women's",
+    schedule: womensPoolPlaySchedule,
+    sheetUrl:
+      "https://docs.google.com/spreadsheets/d/16T9p100WK3UaVPioNVDuot7As7khwZsDQRLX9ss2Z5w/edit?gid=613029207#gid=613029207",
+  },
+}
 
 export default function Tournament() {
   const [showPreview, setShowPreview] = useState(false)
+  const [activeDivision, setActiveDivision] = useState("mens")
   const [activeWave, setActiveWave] = useState("morning")
   const [teamSearch, setTeamSearch] = useState("")
-  const wave = poolPlaySchedule[activeWave]
+  const division = divisionSchedules[activeDivision]
+  const wave = division.schedule[activeWave]
   const courtNumbers = useMemo(
     () => Object.keys(wave.courts).map(Number).sort((a, b) => a - b),
     [wave],
@@ -378,10 +393,27 @@ export default function Tournament() {
               pool play concludes.
             </p>
 
-            {/* Controls: wave toggle, team search, source link */}
+            {/* Controls: division toggle, wave toggle, team search, source link */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <div className="inline-flex rounded-sm border border-black/10 bg-white p-1 shadow-sm">
-                {Object.entries(poolPlaySchedule).map(([key, w]) => (
+                {Object.entries(divisionSchedules).map(([key, d]) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setActiveDivision(key)}
+                    className={`px-5 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
+                      activeDivision === key
+                        ? "bg-[#275E6B] text-white"
+                        : "text-black/60 hover:text-black"
+                    }`}
+                  >
+                    {d.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="inline-flex rounded-sm border border-black/10 bg-white p-1 shadow-sm">
+                {Object.entries(division.schedule).map(([key, w]) => (
                   <button
                     key={key}
                     type="button"
@@ -427,7 +459,7 @@ export default function Tournament() {
               </div>
 
               <a
-                href={POOL_SCHEDULE_SHEET_URL}
+                href={division.sheetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-[#275E6B] underline decoration-black/20 underline-offset-4 hover:decoration-[#275E6B]"

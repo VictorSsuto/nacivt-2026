@@ -9,6 +9,7 @@ export const LINKS = {
   tournamentRules: "/tournament#rules",
 
   about: "/about",
+  booklet: "/booklet",
   far: "/far",
   events: "/events",
   activities: "/activities",

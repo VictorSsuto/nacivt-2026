@@ -1,45 +1,7 @@
 import aboutHero from "../../assets/aboutt.jpg"
-import dobeAndyFlyer from "../../assets/dobe-andy-flyer.jpg"
-import teashopLogo from "../../assets/teashop-logo.png"
-import afterpartyFlyer from "../../assets/nacivt-afterparty-flyer.jpg"
-import jiaFlyer from "../../assets/jia-flyer.png"
-import nightMarketFlyer from "../../assets/night-market-flyer.jpg"
 import { FadeIn } from "../../components/FadeIn"
 import { Link } from "react-router-dom"
-import { LINKS } from "../../data/links"
-
-const partners = [
-  {
-    name: "Dobe & Andy",
-    role: "Food Partner · Hong Kong BBQ",
-    image: dobeAndyFlyer,
-    link: LINKS.food,
-  },
-  {
-    name: "#Teashop",
-    role: "Food Partner · Bubble Tea",
-    image: teashopLogo,
-    link: LINKS.food,
-  },
-  {
-    name: "Pangea",
-    role: "Official NACIVT Afterparty",
-    image: afterpartyFlyer,
-    link: LINKS.events,
-  },
-  {
-    name: "JIA Foundation",
-    role: "Chinatown Mini-Tour & Exhibit",
-    image: jiaFlyer,
-    link: LINKS.events,
-  },
-  {
-    name: "Marché de Nuit Asiatique",
-    role: "NACIVT Night Market",
-    image: nightMarketFlyer,
-    link: LINKS.events,
-  },
-]
+import { partners } from "../../data/partners"
 
 export default function About() {
   return (
@@ -193,30 +155,58 @@ export default function About() {
                 </p>
 
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                  {partners.map((partner) => (
-                    <Link
-                      key={partner.name}
-                      to={partner.link}
-                      className="group flex flex-col overflow-hidden rounded-sm border border-black/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                    >
-                      <div className="flex h-28 items-center justify-center bg-white p-4">
-                        <img
-                          src={partner.image}
-                          alt={`${partner.name} logo`}
-                          loading="lazy"
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
-                      <div className="border-t border-black/10 p-4">
-                        <h3 className="text-base font-semibold text-black">
-                          {partner.name}
-                        </h3>
-                        <p className="mt-1 text-sm text-black/60">
-                          {partner.role}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                  {partners.map((partner) => {
+                    const cardClass =
+                      "group flex flex-col overflow-hidden rounded-sm border border-black/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    const cardBody = (
+                      <>
+                        <div className="flex h-28 items-center justify-center bg-white p-4">
+                          <img
+                            src={partner.image}
+                            alt={`${partner.name} logo`}
+                            loading="lazy"
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+                        <div className="border-t border-black/10 p-4">
+                          <h3 className="text-base font-semibold text-black">
+                            {partner.name}
+                          </h3>
+                          <p className="mt-1 text-sm text-black/60">
+                            {partner.role}
+                          </p>
+                        </div>
+                      </>
+                    )
+
+                    if (!partner.link) {
+                      return (
+                        <div key={partner.name} className={cardClass}>
+                          {cardBody}
+                        </div>
+                      )
+                    }
+
+                    if (partner.external) {
+                      return (
+                        <a
+                          key={partner.name}
+                          href={partner.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cardClass}
+                        >
+                          {cardBody}
+                        </a>
+                      )
+                    }
+
+                    return (
+                      <Link key={partner.name} to={partner.link} className={cardClass}>
+                        {cardBody}
+                      </Link>
+                    )
+                  })}
                 </div>
               </section>
             </FadeIn>
